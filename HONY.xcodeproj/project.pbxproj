@@ -1,0 +1,666 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1835925E193770CD007F6A9B /* coverphoto1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1835925D193770CD007F6A9B /* coverphoto1.png */; };
+		184A2AB71934B580006465C9 /* HONYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184A2AB61934B580006465C9 /* HONYViewController.m */; };
+		18A99CF91934E790008977C1 /* honytitle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18A99CF81934E790008977C1 /* honytitle.jpg */; };
+		18B1FF56193627E70087DE8B /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18B1FF55193627D40087DE8B /* Raleway-Regular.ttf */; };
+		18D73DA119378B55005EAE68 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D73D9E19378B55005EAE68 /* PageViewController.m */; };
+		18D73DA219378B55005EAE68 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D73DA019378B55005EAE68 /* PageContentViewController.m */; };
+		18D73DA519378C80005EAE68 /* Bild1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D73DA319378C80005EAE68 /* Bild1.png */; };
+		18D73DA619378C80005EAE68 /* Bild2.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D73DA419378C80005EAE68 /* Bild2.png */; };
+		18D73DA819379467005EAE68 /* Bild3.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D73DA719379467005EAE68 /* Bild3.png */; };
+		18DADD8F193779A400C3EE8B /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DADD8E193779A400C3EE8B /* NewsViewController.m */; };
+		18DADD91193781F000C3EE8B /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DADD90193781F000C3EE8B /* CustomCell.xib */; };
+		18DADD941937821600C3EE8B /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DADD931937821600C3EE8B /* CustomCell.m */; };
+		18DB27EA1937629700712D15 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DB27E91937629700712D15 /* AboutViewController.m */; };
+		8361AD08194DE335002A37C7 /* ImageScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8361AD07194DE335002A37C7 /* ImageScrollViewController.m */; };
+		8376DA1519333FC700F2FBBE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8376DA1419333FC700F2FBBE /* Foundation.framework */; };
+		8376DA1719333FC700F2FBBE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8376DA1619333FC700F2FBBE /* CoreGraphics.framework */; };
+		8376DA1919333FC700F2FBBE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8376DA1819333FC700F2FBBE /* UIKit.framework */; };
+		8376DA1F19333FC700F2FBBE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8376DA1D19333FC700F2FBBE /* InfoPlist.strings */; };
+		8376DA2119333FC700F2FBBE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8376DA2019333FC700F2FBBE /* main.m */; };
+		8376DA2519333FC700F2FBBE /* HOAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8376DA2419333FC700F2FBBE /* HOAppDelegate.m */; };
+		8376DA2819333FC700F2FBBE /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8376DA2619333FC700F2FBBE /* Main_iPhone.storyboard */; };
+		8376DA2B19333FC700F2FBBE /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8376DA2919333FC700F2FBBE /* Main_iPad.storyboard */; };
+		8376DA3019333FC700F2FBBE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8376DA2F19333FC700F2FBBE /* Images.xcassets */; };
+		8376DA3719333FC700F2FBBE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8376DA3619333FC700F2FBBE /* XCTest.framework */; };
+		8376DA3819333FC700F2FBBE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8376DA1419333FC700F2FBBE /* Foundation.framework */; };
+		8376DA3919333FC700F2FBBE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8376DA1819333FC700F2FBBE /* UIKit.framework */; };
+		8376DA4119333FC700F2FBBE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8376DA3F19333FC700F2FBBE /* InfoPlist.strings */; };
+		8376DA4319333FC700F2FBBE /* HONYTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8376DA4219333FC700F2FBBE /* HONYTests.m */; };
+		8376DA4F193342CB00F2FBBE /* CollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8376DA4D193342CB00F2FBBE /* CollectionCell.m */; };
+		8376DA50193342CB00F2FBBE /* CollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8376DA4E193342CB00F2FBBE /* CollectionCell.xib */; };
+		8376DA531933430600F2FBBE /* HOFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8376DA521933430600F2FBBE /* HOFeedViewController.m */; };
+		8376DA56193346B500F2FBBE /* DPWebConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 8376DA55193346B500F2FBBE /* DPWebConnector.m */; };
+		8376DA581933543700F2FBBE /* BebasNeue.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8376DA571933535D00F2FBBE /* BebasNeue.ttf */; };
+		83B461941943328D00EBCBDF /* HPPostHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B461911943328D00EBCBDF /* HPPostHandler.m */; };
+		83B461951943328D00EBCBDF /* HPTumblrPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B461931943328D00EBCBDF /* HPTumblrPost.m */; };
+		83B82A381933778D00B47F50 /* HOFullscreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B82A371933778D00B47F50 /* HOFullscreenViewController.m */; };
+		83DB03B3195D789000DC303A /* HOFeedPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DB03B2195D789000DC303A /* HOFeedPageViewController.m */; };
+		946102FC151143E59B1DD3D3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 481DC6893C1E4743B44E3996 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8376DA3A19333FC700F2FBBE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8376DA0919333FC700F2FBBE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8376DA1019333FC700F2FBBE;
+			remoteInfo = HONY;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1835925D193770CD007F6A9B /* coverphoto1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coverphoto1.png; sourceTree = "<group>"; };
+		184A2AB51934B580006465C9 /* HONYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HONYViewController.h; sourceTree = "<group>"; };
+		184A2AB61934B580006465C9 /* HONYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HONYViewController.m; sourceTree = "<group>"; };
+		18A99CF81934E790008977C1 /* honytitle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = honytitle.jpg; sourceTree = "<group>"; };
+		18B1FF55193627D40087DE8B /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
+		18D73D9D19378B55005EAE68 /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
+		18D73D9E19378B55005EAE68 /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
+		18D73D9F19378B55005EAE68 /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
+		18D73DA019378B55005EAE68 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
+		18D73DA319378C80005EAE68 /* Bild1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bild1.png; sourceTree = "<group>"; };
+		18D73DA419378C80005EAE68 /* Bild2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bild2.png; sourceTree = "<group>"; };
+		18D73DA719379467005EAE68 /* Bild3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bild3.png; sourceTree = "<group>"; };
+		18DADD8D193779A400C3EE8B /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
+		18DADD8E193779A400C3EE8B /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
+		18DADD90193781F000C3EE8B /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		18DADD921937821600C3EE8B /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
+		18DADD931937821600C3EE8B /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
+		18DB27E81937629700712D15 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		18DB27E91937629700712D15 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		481DC6893C1E4743B44E3996 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8361AD06194DE335002A37C7 /* ImageScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScrollViewController.h; sourceTree = "<group>"; };
+		8361AD07194DE335002A37C7 /* ImageScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageScrollViewController.m; sourceTree = "<group>"; };
+		8376DA1119333FC700F2FBBE /* HONY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HONY.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8376DA1419333FC700F2FBBE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8376DA1619333FC700F2FBBE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8376DA1819333FC700F2FBBE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8376DA1C19333FC700F2FBBE /* HONY-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HONY-Info.plist"; sourceTree = "<group>"; };
+		8376DA1E19333FC700F2FBBE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8376DA2019333FC700F2FBBE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8376DA2219333FC700F2FBBE /* HONY-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HONY-Prefix.pch"; sourceTree = "<group>"; };
+		8376DA2319333FC700F2FBBE /* HOAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HOAppDelegate.h; sourceTree = "<group>"; };
+		8376DA2419333FC700F2FBBE /* HOAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HOAppDelegate.m; sourceTree = "<group>"; };
+		8376DA2719333FC700F2FBBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		8376DA2A19333FC700F2FBBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		8376DA2F19333FC700F2FBBE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8376DA3519333FC700F2FBBE /* HONYTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HONYTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8376DA3619333FC700F2FBBE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		8376DA3E19333FC700F2FBBE /* HONYTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HONYTests-Info.plist"; sourceTree = "<group>"; };
+		8376DA4019333FC700F2FBBE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8376DA4219333FC700F2FBBE /* HONYTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HONYTests.m; sourceTree = "<group>"; };
+		8376DA4C193342CB00F2FBBE /* CollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCell.h; sourceTree = "<group>"; };
+		8376DA4D193342CB00F2FBBE /* CollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCell.m; sourceTree = "<group>"; };
+		8376DA4E193342CB00F2FBBE /* CollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionCell.xib; sourceTree = "<group>"; };
+		8376DA511933430600F2FBBE /* HOFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOFeedViewController.h; sourceTree = "<group>"; };
+		8376DA521933430600F2FBBE /* HOFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOFeedViewController.m; sourceTree = "<group>"; };
+		8376DA54193346B500F2FBBE /* DPWebConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPWebConnector.h; sourceTree = "<group>"; };
+		8376DA55193346B500F2FBBE /* DPWebConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPWebConnector.m; sourceTree = "<group>"; };
+		8376DA571933535D00F2FBBE /* BebasNeue.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BebasNeue.ttf; sourceTree = "<group>"; };
+		83B461901943328D00EBCBDF /* HPPostHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPostHandler.h; sourceTree = "<group>"; };
+		83B461911943328D00EBCBDF /* HPPostHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPostHandler.m; sourceTree = "<group>"; };
+		83B461921943328D00EBCBDF /* HPTumblrPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTumblrPost.h; sourceTree = "<group>"; };
+		83B461931943328D00EBCBDF /* HPTumblrPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTumblrPost.m; sourceTree = "<group>"; };
+		83B82A361933778D00B47F50 /* HOFullscreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOFullscreenViewController.h; sourceTree = "<group>"; };
+		83B82A371933778D00B47F50 /* HOFullscreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOFullscreenViewController.m; sourceTree = "<group>"; };
+		83DB03B1195D789000DC303A /* HOFeedPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOFeedPageViewController.h; sourceTree = "<group>"; };
+		83DB03B2195D789000DC303A /* HOFeedPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOFeedPageViewController.m; sourceTree = "<group>"; };
+		E11A31A25BF348A4B0D684E0 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8376DA0E19333FC700F2FBBE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8376DA1719333FC700F2FBBE /* CoreGraphics.framework in Frameworks */,
+				8376DA1919333FC700F2FBBE /* UIKit.framework in Frameworks */,
+				8376DA1519333FC700F2FBBE /* Foundation.framework in Frameworks */,
+				946102FC151143E59B1DD3D3 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8376DA3219333FC700F2FBBE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8376DA3719333FC700F2FBBE /* XCTest.framework in Frameworks */,
+				8376DA3919333FC700F2FBBE /* UIKit.framework in Frameworks */,
+				8376DA3819333FC700F2FBBE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8376DA0819333FC700F2FBBE = {
+			isa = PBXGroup;
+			children = (
+				8376DA1A19333FC700F2FBBE /* HONY */,
+				8376DA3C19333FC700F2FBBE /* HONYTests */,
+				8376DA1319333FC700F2FBBE /* Frameworks */,
+				8376DA1219333FC700F2FBBE /* Products */,
+				E11A31A25BF348A4B0D684E0 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		8376DA1219333FC700F2FBBE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8376DA1119333FC700F2FBBE /* HONY.app */,
+				8376DA3519333FC700F2FBBE /* HONYTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8376DA1319333FC700F2FBBE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8376DA1419333FC700F2FBBE /* Foundation.framework */,
+				8376DA1619333FC700F2FBBE /* CoreGraphics.framework */,
+				8376DA1819333FC700F2FBBE /* UIKit.framework */,
+				8376DA3619333FC700F2FBBE /* XCTest.framework */,
+				481DC6893C1E4743B44E3996 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8376DA1A19333FC700F2FBBE /* HONY */ = {
+			isa = PBXGroup;
+			children = (
+				18D73DA319378C80005EAE68 /* Bild1.png */,
+				18D73DA419378C80005EAE68 /* Bild2.png */,
+				18D73DA719379467005EAE68 /* Bild3.png */,
+				83B461901943328D00EBCBDF /* HPPostHandler.h */,
+				83B461911943328D00EBCBDF /* HPPostHandler.m */,
+				83B461921943328D00EBCBDF /* HPTumblrPost.h */,
+				83B461931943328D00EBCBDF /* HPTumblrPost.m */,
+				8376DA54193346B500F2FBBE /* DPWebConnector.h */,
+				8376DA55193346B500F2FBBE /* DPWebConnector.m */,
+				18D73D9D19378B55005EAE68 /* PageViewController.h */,
+				18D73D9E19378B55005EAE68 /* PageViewController.m */,
+				18D73D9F19378B55005EAE68 /* PageContentViewController.h */,
+				18D73DA019378B55005EAE68 /* PageContentViewController.m */,
+				8376DA4C193342CB00F2FBBE /* CollectionCell.h */,
+				8376DA4D193342CB00F2FBBE /* CollectionCell.m */,
+				8376DA4E193342CB00F2FBBE /* CollectionCell.xib */,
+				8376DA2319333FC700F2FBBE /* HOAppDelegate.h */,
+				8376DA2419333FC700F2FBBE /* HOAppDelegate.m */,
+				8376DA2619333FC700F2FBBE /* Main_iPhone.storyboard */,
+				83B82A361933778D00B47F50 /* HOFullscreenViewController.h */,
+				83B82A371933778D00B47F50 /* HOFullscreenViewController.m */,
+				8361AD06194DE335002A37C7 /* ImageScrollViewController.h */,
+				8361AD07194DE335002A37C7 /* ImageScrollViewController.m */,
+				8376DA511933430600F2FBBE /* HOFeedViewController.h */,
+				8376DA521933430600F2FBBE /* HOFeedViewController.m */,
+				83DB03B1195D789000DC303A /* HOFeedPageViewController.h */,
+				83DB03B2195D789000DC303A /* HOFeedPageViewController.m */,
+				8376DA2919333FC700F2FBBE /* Main_iPad.storyboard */,
+				18DB27E81937629700712D15 /* AboutViewController.h */,
+				18DB27E91937629700712D15 /* AboutViewController.m */,
+				18DADD8D193779A400C3EE8B /* NewsViewController.h */,
+				18DADD8E193779A400C3EE8B /* NewsViewController.m */,
+				184A2AB51934B580006465C9 /* HONYViewController.h */,
+				184A2AB61934B580006465C9 /* HONYViewController.m */,
+				18DADD90193781F000C3EE8B /* CustomCell.xib */,
+				18DADD921937821600C3EE8B /* CustomCell.h */,
+				18DADD931937821600C3EE8B /* CustomCell.m */,
+				18A99CF81934E790008977C1 /* honytitle.jpg */,
+				1835925D193770CD007F6A9B /* coverphoto1.png */,
+				8376DA2F19333FC700F2FBBE /* Images.xcassets */,
+				8376DA571933535D00F2FBBE /* BebasNeue.ttf */,
+				18B1FF55193627D40087DE8B /* Raleway-Regular.ttf */,
+				8376DA1B19333FC700F2FBBE /* Supporting Files */,
+			);
+			path = HONY;
+			sourceTree = "<group>";
+		};
+		8376DA1B19333FC700F2FBBE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8376DA1C19333FC700F2FBBE /* HONY-Info.plist */,
+				8376DA1D19333FC700F2FBBE /* InfoPlist.strings */,
+				8376DA2019333FC700F2FBBE /* main.m */,
+				8376DA2219333FC700F2FBBE /* HONY-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8376DA3C19333FC700F2FBBE /* HONYTests */ = {
+			isa = PBXGroup;
+			children = (
+				8376DA4219333FC700F2FBBE /* HONYTests.m */,
+				8376DA3D19333FC700F2FBBE /* Supporting Files */,
+			);
+			path = HONYTests;
+			sourceTree = "<group>";
+		};
+		8376DA3D19333FC700F2FBBE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8376DA3E19333FC700F2FBBE /* HONYTests-Info.plist */,
+				8376DA3F19333FC700F2FBBE /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8376DA1019333FC700F2FBBE /* HONY */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8376DA4619333FC700F2FBBE /* Build configuration list for PBXNativeTarget "HONY" */;
+			buildPhases = (
+				69122AD1AA4F486E9720FF9E /* Check Pods Manifest.lock */,
+				8376DA0D19333FC700F2FBBE /* Sources */,
+				8376DA0E19333FC700F2FBBE /* Frameworks */,
+				8376DA0F19333FC700F2FBBE /* Resources */,
+				68F8A8474C154B0E8A87E3D9 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HONY;
+			productName = HONY;
+			productReference = 8376DA1119333FC700F2FBBE /* HONY.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8376DA3419333FC700F2FBBE /* HONYTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8376DA4919333FC700F2FBBE /* Build configuration list for PBXNativeTarget "HONYTests" */;
+			buildPhases = (
+				8376DA3119333FC700F2FBBE /* Sources */,
+				8376DA3219333FC700F2FBBE /* Frameworks */,
+				8376DA3319333FC700F2FBBE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8376DA3B19333FC700F2FBBE /* PBXTargetDependency */,
+			);
+			name = HONYTests;
+			productName = HONYTests;
+			productReference = 8376DA3519333FC700F2FBBE /* HONYTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8376DA0919333FC700F2FBBE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = HO;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Magnus Langanke";
+				TargetAttributes = {
+					8376DA1019333FC700F2FBBE = {
+						DevelopmentTeam = E7MG42CGF8;
+					};
+					8376DA3419333FC700F2FBBE = {
+						TestTargetID = 8376DA1019333FC700F2FBBE;
+					};
+				};
+			};
+			buildConfigurationList = 8376DA0C19333FC700F2FBBE /* Build configuration list for PBXProject "HONY" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8376DA0819333FC700F2FBBE;
+			productRefGroup = 8376DA1219333FC700F2FBBE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8376DA1019333FC700F2FBBE /* HONY */,
+				8376DA3419333FC700F2FBBE /* HONYTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8376DA0F19333FC700F2FBBE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18DADD91193781F000C3EE8B /* CustomCell.xib in Resources */,
+				18D73DA619378C80005EAE68 /* Bild2.png in Resources */,
+				18B1FF56193627E70087DE8B /* Raleway-Regular.ttf in Resources */,
+				8376DA581933543700F2FBBE /* BebasNeue.ttf in Resources */,
+				18D73DA519378C80005EAE68 /* Bild1.png in Resources */,
+				8376DA50193342CB00F2FBBE /* CollectionCell.xib in Resources */,
+				8376DA2B19333FC700F2FBBE /* Main_iPad.storyboard in Resources */,
+				8376DA3019333FC700F2FBBE /* Images.xcassets in Resources */,
+				1835925E193770CD007F6A9B /* coverphoto1.png in Resources */,
+				8376DA2819333FC700F2FBBE /* Main_iPhone.storyboard in Resources */,
+				18A99CF91934E790008977C1 /* honytitle.jpg in Resources */,
+				18D73DA819379467005EAE68 /* Bild3.png in Resources */,
+				8376DA1F19333FC700F2FBBE /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8376DA3319333FC700F2FBBE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8376DA4119333FC700F2FBBE /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		68F8A8474C154B0E8A87E3D9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		69122AD1AA4F486E9720FF9E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8376DA0D19333FC700F2FBBE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18DB27EA1937629700712D15 /* AboutViewController.m in Sources */,
+				8361AD08194DE335002A37C7 /* ImageScrollViewController.m in Sources */,
+				8376DA4F193342CB00F2FBBE /* CollectionCell.m in Sources */,
+				18DADD941937821600C3EE8B /* CustomCell.m in Sources */,
+				8376DA2119333FC700F2FBBE /* main.m in Sources */,
+				8376DA2519333FC700F2FBBE /* HOAppDelegate.m in Sources */,
+				83B461951943328D00EBCBDF /* HPTumblrPost.m in Sources */,
+				184A2AB71934B580006465C9 /* HONYViewController.m in Sources */,
+				8376DA56193346B500F2FBBE /* DPWebConnector.m in Sources */,
+				18D73DA219378B55005EAE68 /* PageContentViewController.m in Sources */,
+				18DADD8F193779A400C3EE8B /* NewsViewController.m in Sources */,
+				83B461941943328D00EBCBDF /* HPPostHandler.m in Sources */,
+				83DB03B3195D789000DC303A /* HOFeedPageViewController.m in Sources */,
+				83B82A381933778D00B47F50 /* HOFullscreenViewController.m in Sources */,
+				8376DA531933430600F2FBBE /* HOFeedViewController.m in Sources */,
+				18D73DA119378B55005EAE68 /* PageViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8376DA3119333FC700F2FBBE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8376DA4319333FC700F2FBBE /* HONYTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8376DA3B19333FC700F2FBBE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8376DA1019333FC700F2FBBE /* HONY */;
+			targetProxy = 8376DA3A19333FC700F2FBBE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8376DA1D19333FC700F2FBBE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8376DA1E19333FC700F2FBBE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8376DA2619333FC700F2FBBE /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8376DA2719333FC700F2FBBE /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		8376DA2919333FC700F2FBBE /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8376DA2A19333FC700F2FBBE /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		8376DA3F19333FC700F2FBBE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8376DA4019333FC700F2FBBE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8376DA4419333FC700F2FBBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8376DA4519333FC700F2FBBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8376DA4719333FC700F2FBBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E11A31A25BF348A4B0D684E0 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HONY/HONY-Prefix.pch";
+				INFOPLIST_FILE = "HONY/HONY-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8376DA4819333FC700F2FBBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E11A31A25BF348A4B0D684E0 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HONY/HONY-Prefix.pch";
+				INFOPLIST_FILE = "HONY/HONY-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		8376DA4A19333FC700F2FBBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HONY.app/HONY";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HONY/HONY-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "HONYTests/HONYTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		8376DA4B19333FC700F2FBBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HONY.app/HONY";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HONY/HONY-Prefix.pch";
+				INFOPLIST_FILE = "HONYTests/HONYTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8376DA0C19333FC700F2FBBE /* Build configuration list for PBXProject "HONY" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8376DA4419333FC700F2FBBE /* Debug */,
+				8376DA4519333FC700F2FBBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8376DA4619333FC700F2FBBE /* Build configuration list for PBXNativeTarget "HONY" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8376DA4719333FC700F2FBBE /* Debug */,
+				8376DA4819333FC700F2FBBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8376DA4919333FC700F2FBBE /* Build configuration list for PBXNativeTarget "HONYTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8376DA4A19333FC700F2FBBE /* Debug */,
+				8376DA4B19333FC700F2FBBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8376DA0919333FC700F2FBBE /* Project object */;
+}
