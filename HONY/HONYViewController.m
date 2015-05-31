@@ -9,6 +9,7 @@
 #import "HONYViewController.h"
 
 #import <QuartzCore/QuartzCore.h>
+#import "SWRevealViewController.h"
 
 #define distanceButtons 35.0f
 
@@ -51,6 +52,15 @@
     topBar.backgroundColor = [UIColor colorWithRed:26/255.0 green:33/255.0 blue:41/255.0 alpha:0.75];
     topBar.backgroundColor = [UIColor blackColor];
     
+    //Add Menu Item to Top Bar
+    SWRevealViewController* revealViewController = self.revealViewController;
+    if(revealViewController){
+        UIButton* menuItem = [[UIButton alloc] initWithFrame:CGRectMake(5, topBar.bounds.size.height - 5- 25, 20, 20)];
+        [menuItem addTarget:self.revealViewController action:@selector(revealToggle:) forControlEvents: UIControlEventTouchDown];
+        //[menuItem setTitle:@"Menu" forState:UIControlStateNormal];
+        [menuItem setImage:[UIImage imageNamed:@"MenuIcon"] forState:UIControlStateNormal];
+        [topBar addSubview:menuItem];
+    }
     
     // Blue area
     

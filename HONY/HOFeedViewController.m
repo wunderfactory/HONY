@@ -16,6 +16,7 @@
 #import "HPTumblrPost.h"
 #import "ImageScrollViewController.h"
 #import "HOFeedPageViewController.h"
+#import "SWRevealViewController.h"
 
 @interface HOFeedViewController ()
 
@@ -81,11 +82,26 @@
     honyLabel.textColor = [UIColor whiteColor];
     honyLabel.font = [UIFont fontWithName:@"BebasNeue" size:32.0];
     
+    //Add Menu Item to Top Bar
+    SWRevealViewController* revealViewController = self.revealViewController;
+    if(revealViewController){
+        revealViewController.rearViewRevealWidth = 150;
+        [self.view addGestureRecognizer:[revealViewController panGestureRecognizer]];
+        UIButton* menuItem = [[UIButton alloc] initWithFrame:CGRectMake(5, topBar.bounds.size.height - 5- 25, 20, 20)];
+        [menuItem addTarget:self.revealViewController action:@selector(revealToggle:) forControlEvents: UIControlEventTouchDown];
+        //[menuItem setTitle:@"Menu" forState:UIControlStateNormal];
+        [menuItem setImage:[UIImage imageNamed:@"MenuIcon"] forState:UIControlStateNormal];
+        [topBar addSubview:menuItem];
+    }
+    
     [topBar addSubview:honyLabel];
     topBar.backgroundColor = [UIColor colorWithRed:26/255.0 green:33/255.0 blue:41/255.0 alpha:0.75];
     [self.view addSubview:topBar];
     
-    UIView* view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tabBarController.tabBar.frame.size.width, self.tabBarController.tabBar.frame.size.height)];
+    
+    //TBD: This Code only creates an image from the color right? Why not do this:
+    //self.tabBarController.tabBar.backgroundColor = ...
+    /*UIView* view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tabBarController.tabBar.frame.size.width, self.tabBarController.tabBar.frame.size.height)];
     view.backgroundColor = [UIColor colorWithRed:26/255.0 green:33/255.0 blue:41/255.0 alpha:0.75];
     UIGraphicsBeginImageContext(view.bounds.size);
     [view.layer renderInContext:UIGraphicsGetCurrentContext()];
@@ -93,10 +109,12 @@
     UIGraphicsEndImageContext();
     
     self.tabBarController.tabBar.backgroundImage = tabbarBackground;
-    [self.tabBarController.tabBar setSelectedImageTintColor:[UIColor whiteColor]];
+
+    [self.tabBarController.tabBar setSelectedImageTintColor:[UIColor whiteColor]];*/
     
     UIScrollView *scroll = (UIScrollView*)self.collectionView;
-    [scroll setContentInset:UIEdgeInsetsMake(topBar.frame.size.height, 0, self.tabBarController.tabBar.frame.size.height, 0)];
+    [scroll setContentInset:UIEdgeInsetsMake(topBar.frame.size.height, 0, 0, 0)];
+    //[scroll setContentInset:UIEdgeInsetsMake(topBar.frame.size.height, 0, self.tabBarController.tabBar.frame.size.height, 0)];
     
     UIButton* shuffelButton = [[UIButton alloc] initWithFrame:CGRectMake(topBar.bounds.size.width - 5 - 28, topBar.bounds.size.height - 5- 25, 28, 20)];
     [shuffelButton addTarget:self action:@selector(loadShuffelView) forControlEvents:UIControlEventTouchUpInside];

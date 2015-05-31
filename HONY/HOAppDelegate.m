@@ -27,7 +27,10 @@
     // Override point for customization after application launch.
     // Setting up Push Notification
 
+    //TBD: This does not work in iOS 8 & later.
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
+    //[[UIApplication sharedApplication] registerUserNotificationSettings:(UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)];
     
     
     UIPageControl *pageControl = [UIPageControl appearance];

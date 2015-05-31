@@ -10,14 +10,14 @@
 	<string>HONY</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>CECDA97BE8E61DDB5B92B2AE4C6DAB9D1DCFD3BC</key>
+		<key>4E27C70A3996AB8DF0059A634B71FD9B123427AD</key>
 		<string>https://github.com/humansofplanetearth/iOS.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>HONY.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>CECDA97BE8E61DDB5B92B2AE4C6DAB9D1DCFD3BC</key>
+		<key>4E27C70A3996AB8DF0059A634B71FD9B123427AD</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>CECDA97BE8E61DDB5B92B2AE4C6DAB9D1DCFD3BC</string>
+	<string>4E27C70A3996AB8DF0059A634B71FD9B123427AD</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>CECDA97BE8E61DDB5B92B2AE4C6DAB9D1DCFD3BC</string>
+			<string>4E27C70A3996AB8DF0059A634B71FD9B123427AD</string>
 			<key>IDESourceControlWCCName</key>
 			<string>HONY</string>
 		</dict>
