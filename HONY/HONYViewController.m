@@ -18,6 +18,7 @@
 @end
 
 @implementation HONYViewController
+@synthesize topBar, honyLabel, infoText, bottomBar;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,10 +42,7 @@
     
     
     // Setup Top Bar
-    
-    UIView *topBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 60)];
-    UILabel *honyLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 25, self.view.bounds.size.width, 30)];
-    honyLabel.text = @"HUMANS OF NEW YORK";
+    honyLabel.text = @"ABOUT HONY";
     honyLabel.textAlignment = NSTextAlignmentCenter;
     honyLabel.textColor = [UIColor whiteColor];
     honyLabel.font = bebasNeue;
@@ -62,38 +60,9 @@
         [topBar addSubview:menuItem];
     }
     
-    // Blue area
-    
-    UIView *blueAreaView = [[UIView alloc] initWithFrame:CGRectMake(0, topBar.frame.size.height, self.view.bounds.size.width, 185)];
-    blueAreaView.backgroundColor = honyBlue;
-    
-    // Label
-    UILabel *abouthonyLabel = [[UILabel alloc] initWithFrame:CGRectMake(25, 20, self.view.bounds.size.width, 40)];
-    abouthonyLabel.textAlignment = NSTextAlignmentLeft;
-    abouthonyLabel.font = bebasNeue;
-    abouthonyLabel.textColor = [UIColor whiteColor];
-    
-    NSMutableAttributedString *abouthonyString = [[NSMutableAttributedString alloc] initWithString:@"ABOUT HONY"];
-    [abouthonyString addAttribute: NSUnderlineStyleAttributeName
-                            value:[NSNumber numberWithInt:1]
-                            range:(NSRange){0,[abouthonyString length]
-    }];
-    abouthonyLabel.attributedText = abouthonyString;
-    
-    
-    UIImageView *presentationImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 66, self.view.bounds.size.width, 119)];
-    presentationImage.image = [UIImage imageNamed:@"honytitle.jpg"];
-    presentationImage.contentMode = UIViewContentModeScaleAspectFit;
-    
-    
     
     
     // Text View & Buttons
-    
-    UIView *textView = [[UIView alloc] initWithFrame:CGRectMake(0, blueAreaView.frame.origin.y + blueAreaView.frame.size.height, self.view.bounds.size.width, self.view.frame.size.height -(blueAreaView.frame.origin.y + blueAreaView.frame.size.height + 60 + self.tabBarController.tabBar.frame.size.height))];
-    textView.backgroundColor = [UIColor whiteColor];
-    
-    UITextView *infoText = [[UITextView alloc] initWithFrame:CGRectMake(10, 0, self.view.bounds.size.width - 20, textView.frame.size.height)];
     infoText.selectable = NO;
     infoText.editable = NO;
     infoText.userInteractionEnabled = YES;
@@ -101,10 +70,7 @@
     infoText.font = raleway;
     infoText.text = @"Brandon Stanton started HONY in the summer of 2010 with the idea of building an exhaustive catalogue of New York City’s inhabitants. He set out to photograph and map more than 10.000 people. Collecting quotes and short stories from the persons he met on the streets of New York he has created one of the most colourful and vibrant blogs on the web. His book has become a #1 NYT bestseller and HONY now has millions of followers around the globe.";
     
-    
-    
-    
-    UIView *bottomBar = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - self.tabBarController.tabBar.frame.size.height -60, self.view.frame.size.width, 60)];
+    //Bottom Bar Setup
     bottomBar.backgroundColor = [UIColor colorWithRed:26/255.0 green:33/255.0 blue:41/255.0 alpha:0.75];
     bottomBar.backgroundColor = [UIColor blackColor];
     
@@ -132,20 +98,11 @@
     
     
     // Add subviews
-    [textView addSubview:infoText];
     [bottomBar addSubview:facebookButton];
     [bottomBar addSubview:tumblrButtom];
     [bottomBar addSubview:twitterButton];
     [bottomBar addSubview:instaButton];
     [bottomBar addSubview:amazonButton];
-    
-    [blueAreaView addSubview:presentationImage];
-    [blueAreaView addSubview:abouthonyLabel];
-    
-    [self.view addSubview:topBar];
-    [self.view addSubview:blueAreaView];
-    [self.view addSubview:textView];
-    [self.view addSubview:bottomBar];
 }
 
 

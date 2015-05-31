@@ -10,6 +10,10 @@
 
 @interface HONYViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *aboutHONYLabel;
+@property (weak, nonatomic) IBOutlet UIView *topBar;
+@property (weak, nonatomic) IBOutlet UILabel *honyLabel;
+@property (weak, nonatomic) IBOutlet UITextView *infoText;
+@property (weak, nonatomic) IBOutlet UIView *bottomBar;
+
 
 @end

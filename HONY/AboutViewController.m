@@ -140,9 +140,6 @@
     [bottomBar addSubview:websiteButtom];
     [bottomBar addSubview:facebookButton];
     [bottomBar addSubview:helpButton];
-    
-    [self.view addSubview:infoText];
-    [self.view addSubview:bottomBar];
 }
 
 
