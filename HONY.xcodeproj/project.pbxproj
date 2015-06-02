@@ -20,6 +20,8 @@
 		18DADD91193781F000C3EE8B /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DADD90193781F000C3EE8B /* CustomCell.xib */; };
 		18DADD941937821600C3EE8B /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DADD931937821600C3EE8B /* CustomCell.m */; };
 		18DB27EA1937629700712D15 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DB27E91937629700712D15 /* AboutViewController.m */; };
+		1F4A89B21B1E164D0066DB67 /* StreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4A89B11B1E164D0066DB67 /* StreamViewController.m */; };
+		1F4A89B51B1E36200066DB67 /* StreamTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4A89B41B1E36200066DB67 /* StreamTableViewCell.m */; };
 		1F9BAFAA1B1B0F4B007DD42E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9BAFA91B1B0F4B007DD42E /* SWRevealViewController.m */; };
 		1F9BAFAD1B1B0F7F007DD42E /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9BAFAC1B1B0F7F007DD42E /* SidebarViewController.m */; };
 		8361AD08194DE335002A37C7 /* ImageScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8361AD07194DE335002A37C7 /* ImageScrollViewController.m */; };
@@ -79,6 +81,10 @@
 		18DADD931937821600C3EE8B /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		18DB27E81937629700712D15 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		18DB27E91937629700712D15 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		1F4A89B01B1E164D0066DB67 /* StreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamViewController.h; sourceTree = "<group>"; };
+		1F4A89B11B1E164D0066DB67 /* StreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamViewController.m; sourceTree = "<group>"; };
+		1F4A89B31B1E36200066DB67 /* StreamTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamTableViewCell.h; sourceTree = "<group>"; };
+		1F4A89B41B1E36200066DB67 /* StreamTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamTableViewCell.m; sourceTree = "<group>"; };
 		1F9BAFA81B1B0F4B007DD42E /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		1F9BAFA91B1B0F4B007DD42E /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		1F9BAFAB1B1B0F7F007DD42E /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarViewController.h; sourceTree = "<group>"; };
@@ -206,6 +212,10 @@
 				83B82A371933778D00B47F50 /* HOFullscreenViewController.m */,
 				8361AD06194DE335002A37C7 /* ImageScrollViewController.h */,
 				8361AD07194DE335002A37C7 /* ImageScrollViewController.m */,
+				1F4A89B31B1E36200066DB67 /* StreamTableViewCell.h */,
+				1F4A89B41B1E36200066DB67 /* StreamTableViewCell.m */,
+				1F4A89B01B1E164D0066DB67 /* StreamViewController.h */,
+				1F4A89B11B1E164D0066DB67 /* StreamViewController.m */,
 				8376DA511933430600F2FBBE /* HOFeedViewController.h */,
 				8376DA521933430600F2FBBE /* HOFeedViewController.m */,
 				83DB03B1195D789000DC303A /* HOFeedPageViewController.h */,
@@ -412,6 +422,7 @@
 				18DB27EA1937629700712D15 /* AboutViewController.m in Sources */,
 				8361AD08194DE335002A37C7 /* ImageScrollViewController.m in Sources */,
 				8376DA4F193342CB00F2FBBE /* CollectionCell.m in Sources */,
+				1F4A89B51B1E36200066DB67 /* StreamTableViewCell.m in Sources */,
 				18DADD941937821600C3EE8B /* CustomCell.m in Sources */,
 				8376DA2119333FC700F2FBBE /* main.m in Sources */,
 				8376DA2519333FC700F2FBBE /* HOAppDelegate.m in Sources */,
@@ -424,6 +435,7 @@
 				1F9BAFAA1B1B0F4B007DD42E /* SWRevealViewController.m in Sources */,
 				83B461941943328D00EBCBDF /* HPPostHandler.m in Sources */,
 				83DB03B3195D789000DC303A /* HOFeedPageViewController.m in Sources */,
+				1F4A89B21B1E164D0066DB67 /* StreamViewController.m in Sources */,
 				83B82A381933778D00B47F50 /* HOFullscreenViewController.m in Sources */,
 				8376DA531933430600F2FBBE /* HOFeedViewController.m in Sources */,
 				18D73DA119378B55005EAE68 /* PageViewController.m in Sources */,
