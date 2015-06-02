@@ -247,9 +247,46 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XtR-5m-yaG" userLabel="bottomBar">
                                 <rect key="frame" x="0.0" y="508" width="320" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaT-pD-ZfW" userLabel="joinButton">
+                                        <rect key="frame" x="8" y="15" width="46" height="30"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="joinButton:" destination="JSh-nz-MU3" eventType="touchUpInside" id="kAU-oq-Zaq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Pq-OA-JIh" userLabel="websiteButton">
+                                        <rect key="frame" x="137" y="15" width="46" height="30"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="websiteButton:" destination="JSh-nz-MU3" eventType="touchUpInside" id="9nN-Ob-uc5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVc-PT-Iy6" userLabel="facebookButton">
+                                        <rect key="frame" x="266" y="15" width="46" height="30"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="facebookButton:" destination="JSh-nz-MU3" eventType="touchUpInside" id="0LW-6f-y5Y"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="GVc-PT-Iy6" secondAttribute="centerY" id="5lu-vT-cSf"/>
+                                    <constraint firstItem="6Pq-OA-JIh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aaT-pD-ZfW" secondAttribute="trailing" constant="10" id="7m4-Ka-uwE"/>
+                                    <constraint firstItem="aaT-pD-ZfW" firstAttribute="leading" secondItem="XtR-5m-yaG" secondAttribute="leading" constant="8" id="9HR-7N-hWs"/>
+                                    <constraint firstAttribute="centerX" secondItem="6Pq-OA-JIh" secondAttribute="centerX" id="9d9-Ab-B9u"/>
+                                    <constraint firstAttribute="trailing" secondItem="GVc-PT-Iy6" secondAttribute="trailing" constant="8" id="E9v-Yf-Dmr"/>
                                     <constraint firstAttribute="height" constant="60" id="EAJ-rO-K8v"/>
+                                    <constraint firstAttribute="centerY" secondItem="aaT-pD-ZfW" secondAttribute="centerY" id="ZY5-D2-5Xp"/>
+                                    <constraint firstItem="GVc-PT-Iy6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Pq-OA-JIh" secondAttribute="trailing" constant="10" id="e0j-69-VAI"/>
+                                    <constraint firstAttribute="centerY" secondItem="6Pq-OA-JIh" secondAttribute="centerY" id="fuH-Kv-qQF"/>
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Edx-1I-sLp" userLabel="infoText">
@@ -286,9 +323,12 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="bottomBar" destination="XtR-5m-yaG" id="TrT-z0-B5c"/>
+                        <outlet property="facebookButton" destination="GVc-PT-Iy6" id="Vi4-9q-4E9"/>
                         <outlet property="honyLabel" destination="Zz0-gh-O8F" id="NYg-r8-G20"/>
                         <outlet property="infoText" destination="Edx-1I-sLp" id="Bfb-Wh-WNq"/>
+                        <outlet property="joinButton" destination="aaT-pD-ZfW" id="Hzs-Bn-5iR"/>
                         <outlet property="topBar" destination="0rp-wG-Rrd" id="I3h-4p-31G"/>
+                        <outlet property="websiteButton" destination="6Pq-OA-JIh" id="tf4-8l-hpv"/>
                         <segue destination="Jo1-Gl-pEy" kind="modal" identifier="aboutViewToNewsView" id="dXE-1Q-Bvm"/>
                     </connections>
                 </viewController>
@@ -520,47 +560,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jEd-eZ-yrw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-79" y="-76"/>
-        </scene>
-        <!--Root View Controller-->
-        <scene sceneID="rJ2-m8-owa">
-            <objects>
-                <tableViewController id="KWn-k3-GKf" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="KeG-zr-gBF">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="biw-DM-w3L">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="biw-DM-w3L" id="e2t-Ds-yhC">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="KWn-k3-GKf" id="Mk8-8t-3gX"/>
-                            <outlet property="delegate" destination="KWn-k3-GKf" id="kZF-rX-e6x"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="u00-zu-gEZ"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sn3-ec-9Te" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="8JC-Kt-4jc">
-            <objects>
-                <navigationController id="fsC-mj-pNu" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8SV-OJ-o1J">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="KWn-k3-GKf" kind="relationship" relationship="rootViewController" id="CDj-jh-9TL"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="J99-iL-AmJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
     <resources>

@@ -14,4 +14,12 @@
 @property (weak, nonatomic) IBOutlet UIView *bottomBar;
 @property (weak, nonatomic) IBOutlet UITextView *infoText;
 
+@property (weak, nonatomic) IBOutlet UIButton *joinButton;
+@property (weak, nonatomic) IBOutlet UIButton *websiteButton;
+@property (weak, nonatomic) IBOutlet UIButton *facebookButton;
+
+- (IBAction)joinButton:(id)sender;
+- (IBAction)websiteButton:(id)sender;
+- (IBAction)facebookButton:(id)sender;
+
 @end

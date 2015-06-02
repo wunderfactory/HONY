@@ -25,6 +25,7 @@
 
 @implementation AboutViewController
 @synthesize topBar, honyLabel, bottomBar, infoText;
+@synthesize joinButton, websiteButton, facebookButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -46,7 +47,7 @@
     UIFont *bebasNeue = [UIFont fontWithName:@"BebasNeue" size:32.0];
     UIFont *raleway = [UIFont fontWithName:@"Raleway-Regular" size:17.0];
     
-    UIColor *honyBlue = [UIColor colorWithRed:59.0/255.0 green:88.0/255.0 blue:152.0/255.0 alpha:1.0];
+    //UIColor *honyBlue = [UIColor colorWithRed:59.0/255.0 green:88.0/255.0 blue:152.0/255.0 alpha:1.0];
     
     
     // Setup Top Bar
@@ -94,8 +95,7 @@
     
     
     
-    UIButton *joinButton = [[UIButton alloc] initWithFrame:CGRectMake(distanceButtons, 20, 60, 25)];
-    [joinButton setTitle:@"join us" forState:UIControlStateNormal];
+    [joinButton setTitle:@" join us " forState:UIControlStateNormal];
     [joinButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [joinButton addTarget:self action:@selector(joinButton) forControlEvents:UIControlEventTouchUpInside];
     joinButton.titleLabel.font = raleway;
@@ -105,18 +105,16 @@
     [joinButton.layer setMasksToBounds:YES];
     
     
-    UIButton *websiteButtom = [[UIButton alloc] initWithFrame:CGRectMake(joinButton.frame.size.width + joinButton.frame.origin.x + distanceButtons, 20, 70, 25)];
-    [websiteButtom setTitle:@"website" forState:UIControlStateNormal];
-    [websiteButtom addTarget:self action:@selector(websiteButton) forControlEvents:UIControlEventTouchUpInside];
-    [websiteButtom setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    websiteButtom.titleLabel.font = raleway;
-    websiteButtom.titleLabel.font = raleway;
-    websiteButtom.layer.borderColor = [[UIColor whiteColor] CGColor];
-    websiteButtom.layer.borderWidth = 1.0f;
-    websiteButtom.layer.cornerRadius = 5;
+    [websiteButton setTitle:@" website " forState:UIControlStateNormal];
+    [websiteButton addTarget:self action:@selector(websiteButton) forControlEvents:UIControlEventTouchUpInside];
+    [websiteButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    websiteButton.titleLabel.font = raleway;
+    websiteButton.titleLabel.font = raleway;
+    websiteButton.layer.borderColor = [[UIColor whiteColor] CGColor];
+    websiteButton.layer.borderWidth = 1.0f;
+    websiteButton.layer.cornerRadius = 5;
     
     
-    UIButton *facebookButton = [[UIButton alloc] initWithFrame:CGRectMake(websiteButtom.frame.size.width + websiteButtom.frame.origin.x + distanceButtons, 20, 80, 25)];
     [facebookButton setTitle:@" facebook " forState:UIControlStateNormal];
     [facebookButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [facebookButton addTarget:self action:@selector(facebookButton) forControlEvents:UIControlEventTouchUpInside];
@@ -125,7 +123,7 @@
     facebookButton.layer.borderWidth = 1.0f;
     facebookButton.layer.cornerRadius = 5;
     
-    
+    /*
     UIButton *helpButton = [[UIButton alloc] initWithFrame:CGRectMake(facebookButton.frame.size.width + facebookButton.frame.origin.x + distanceButtons, 20, 40, 25)];
     [helpButton setTitle:@"faq" forState:UIControlStateNormal];
     [helpButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -134,12 +132,11 @@
     helpButton.layer.borderColor = [[UIColor whiteColor] CGColor];
     helpButton.layer.borderWidth = 1.0f;
     helpButton.layer.cornerRadius = 5;
-    
+    */
     
     [bottomBar addSubview:joinButton];
-    [bottomBar addSubview:websiteButtom];
+    [bottomBar addSubview:websiteButton];
     [bottomBar addSubview:facebookButton];
-    [bottomBar addSubview:helpButton];
 }
 
 
@@ -157,10 +154,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
-- (void)joinButton
-{
+- (IBAction)joinButton:(id)sender {
     MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
     mailViewController.mailComposeDelegate = self;
     [mailViewController setSubject:@"I want to join the HONY App team"];
@@ -170,15 +164,11 @@
     [self presentViewController:mailViewController animated:YES completion:NULL];
 }
 
-
-- (void)websiteButton
-{
+- (IBAction)websiteButton:(id)sender {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://honyapp.com"]];
 }
 
-
-- (void)facebookButton
-{
+- (IBAction)facebookButton:(id)sender {
     BOOL facebookInstalled = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"fb:"]];
     
     if (facebookInstalled) {
