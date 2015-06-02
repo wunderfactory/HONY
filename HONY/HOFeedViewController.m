@@ -116,9 +116,9 @@
     [scroll setContentInset:UIEdgeInsetsMake(topBar.frame.size.height, 0, 0, 0)];
     //[scroll setContentInset:UIEdgeInsetsMake(topBar.frame.size.height, 0, self.tabBarController.tabBar.frame.size.height, 0)];
     
-    UIButton* shuffelButton = [[UIButton alloc] initWithFrame:CGRectMake(topBar.bounds.size.width - 5 - 28, topBar.bounds.size.height - 5- 25, 28, 20)];
+    UIButton* shuffelButton = [[UIButton alloc] initWithFrame:CGRectMake(topBar.bounds.size.width - 5 - 20, topBar.bounds.size.height - 5- 25, 20, 20)];
     [shuffelButton addTarget:self action:@selector(loadShuffelView) forControlEvents:UIControlEventTouchUpInside];
-    [shuffelButton setBackgroundImage:[UIImage imageNamed:@"shuffel"] forState:UIControlStateNormal];
+    [shuffelButton setBackgroundImage:[UIImage imageNamed:@"NewShuffle"] forState:UIControlStateNormal];
     [topBar addSubview:shuffelButton];
 
 }
