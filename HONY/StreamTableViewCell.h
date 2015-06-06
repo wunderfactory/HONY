@@ -12,5 +12,16 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *cellImageView;
 @property (weak, nonatomic) IBOutlet UITextView *textview;
+@property (strong, nonatomic) UIImage* unblurredImage;
+@property (strong, nonatomic) UIImage* blurredImage;
+@property (nonatomic) BOOL imageBlurred;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewHeightConstraint;
 
+-(void)changeTextHiddenStatus;
+-(void)setText:(NSString*)postText;
+
+-(UIImage*)blurImage: (UIImage*)theImage;
+
+-(void)prepareForReuse;
 @end

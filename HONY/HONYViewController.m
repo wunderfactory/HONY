@@ -38,7 +38,7 @@
     UIFont *bebasNeue = [UIFont fontWithName:@"BebasNeue" size:32.0];
     UIFont *raleway = [UIFont fontWithName:@"Raleway-Regular" size:17.0];
     
-    UIColor *honyBlue = [UIColor colorWithRed:59.0/255.0 green:88.0/255.0 blue:152.0/255.0 alpha:1.0];
+   // UIColor *honyBlue = [UIColor colorWithRed:59.0/255.0 green:88.0/255.0 blue:152.0/255.0 alpha:1.0];
     
     
     // Setup Top Bar

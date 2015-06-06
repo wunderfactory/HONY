@@ -35,13 +35,16 @@
         [self performSegueWithIdentifier:@"feedToWalkthrough" sender:nil];
     }
     [streamTableView reloadData];
+    [streamTableView setNeedsLayout];
+    [streamTableView layoutIfNeeded];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     streamTableView.dataSource = self;
     streamTableView.delegate = self;
-    streamTableView.estimatedRowHeight = 50;
+    streamTableView.rowHeight = UITableViewAutomaticDimension;
+    streamTableView.estimatedRowHeight = 400;
     
     [self setNeedsStatusBarAppearanceUpdate];
     [[HPPostHandler sharedPostHandler] startSession];
@@ -55,11 +58,11 @@
     
     
     /*UIView *topBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 60)];
-    UILabel *honyLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 25, self.view.bounds.size.width, 30)];
-    honyLabel.text = @"Humans of New York";
-    honyLabel.textAlignment = NSTextAlignmentCenter;
-    honyLabel.textColor = [UIColor whiteColor];
-    honyLabel.font = [UIFont fontWithName:@"BebasNeue" size:32.0];*/
+     UILabel *honyLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 25, self.view.bounds.size.width, 30)];
+     honyLabel.text = @"Humans of New York";
+     honyLabel.textAlignment = NSTextAlignmentCenter;
+     honyLabel.textColor = [UIColor whiteColor];
+     honyLabel.font = [UIFont fontWithName:@"BebasNeue" size:32.0];*/
     
     //Add Menu Item to Top Bar
     SWRevealViewController* revealViewController = self.revealViewController;
@@ -74,10 +77,10 @@
     }
     
     /*
-    [topBar addSubview:honyLabel];
-    topBar.backgroundColor = [UIColor colorWithRed:26/255.0 green:33/255.0 blue:41/255.0 alpha:0.75];
-    [self.view addSubview:topBar];
-    */
+     [topBar addSubview:honyLabel];
+     topBar.backgroundColor = [UIColor colorWithRed:26/255.0 green:33/255.0 blue:41/255.0 alpha:0.75];
+     [self.view addSubview:topBar];
+     */
     
     //TBD: This Code only creates an image from the color right? Why not do this:
     //self.tabBarController.tabBar.backgroundColor = ...
@@ -106,14 +109,14 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 
 #pragma mark streamTableView
@@ -125,20 +128,31 @@
 
 
 /*-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    selectedIndex = (int)indexPath.row;
-    //    [self performSegueWithIdentifier:@"toTestFull" sender:self];
-    [self performSegueWithIdentifier:@"testingshit" sender:self];
-    
-}*/
+ selectedIndex = (int)indexPath.row;
+ //    [self performSegueWithIdentifier:@"toTestFull" sender:self];
+ [self performSegueWithIdentifier:@"testingshit" sender:self];
+ 
+ }*/
 
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    StreamTableViewCell* cell = [streamTableView dequeueReusableCellWithIdentifier:@"ImageCell"];
-    if(!cell){
-        cell = [[StreamTableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:@"ImageCell"];
-    }
+    CGFloat cellHeight = 100;
+    CGFloat aspectRatio;
     
-    HPTumblrPost* post = (HPTumblrPost *)[[HPPostHandler sharedPostHandler].posts objectAtIndex:indexPath.row];
+    // NSString* reuseIdentifier = [NSString stringWithFormat:@"ImageCell%li", (long)indexPath.row];
+    NSString* reuseIdentifier = @"ImageCell";
+    StreamTableViewCell* cell = [streamTableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+    [cell prepareForReuse];
+    if(!cell){
+        cell = [[StreamTableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:reuseIdentifier];
+    }
+    cell.blurredImage = nil;
+    cell.unblurredImage = nil;
+    cell.imageBlurred = NO;
+    
+    NSMutableArray* postArray = [HPPostHandler sharedPostHandler].posts;
+    NSInteger postNumberInTableView = indexPath.row;
+    HPTumblrPost* post = (HPTumblrPost *)[postArray objectAtIndex:postNumberInTableView];
     
     
     
@@ -146,6 +160,8 @@
     for (NSDictionary* photo in post.photos) {
         if ([photo[@"width"]integerValue] > self.view.bounds.size.width/3*2 && [photo[@"width"] integerValue]>self.view.bounds.size.width/3*2) {
             url = photo[@"url"];
+            aspectRatio = streamTableView.bounds.size.width / [photo[@"width"] integerValue];
+            cellHeight = [photo[@"height"] integerValue] * aspectRatio;
             break;
         }
     }
@@ -153,9 +169,44 @@
         url = post.originalPhoto[@"url"];
     }
     
-    [cell.cellImageView setImageWithURL:url placeholderImage:NULL];
-
+    //[cell.cellImageView setImageWithURL:url placeholderImage:NULL];
+    [cell.cellImageView setImageWithURLRequest:[NSURLRequest requestWithURL:url] placeholderImage:NULL
+                                       success: ^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image){
+                                           //[cell.cellImageView setAlpha:0.0];
+                                           //[streamTableView reloadData];
+                                           [cell.cellImageView setImage:image];
+                                           
+                                           [cell.cellImageView setNeedsLayout];
+                                           [cell.cellImageView layoutIfNeeded];
+                                           [cell setNeedsLayout];
+                                           [cell layoutIfNeeded];
+                                           [streamTableView layoutIfNeeded];
+                                           [streamTableView setNeedsLayout];
+                                           
+                                           /*[UIView animateWithDuration:0.25
+                                            animations:^{
+                                            cell.cellImageView.alpha = 1.0;
+                                            }]*/
+                                       }
+                                       failure:NULL];
+    [cell setText:post.caption];
     
+    CGFloat textViewHeight = [cell.textview sizeThatFits:cell.textview.frame.size].height;
+    CGFloat textViewTopMargin = 10;
+    if(textViewHeight > cellHeight - 2* textViewTopMargin){
+        cell.textViewHeightConstraint.constant = cellHeight - 2* textViewTopMargin;
+        cell.textview.scrollEnabled = YES;
+    }else{
+        cell.textViewHeightConstraint.constant = textViewHeight;
+    }
+    
+    cell.imageHeightConstraint.constant = cellHeight;
+    [cell.cellImageView setNeedsLayout];
+    [cell.cellImageView layoutIfNeeded];
+    [cell setNeedsLayout];
+    [cell layoutIfNeeded];
+    [streamTableView layoutIfNeeded];
+    [streamTableView setNeedsLayout];
     return cell;
 }
 
@@ -163,8 +214,12 @@
     return [[HPPostHandler sharedPostHandler].posts count];
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return UITableViewAutomaticDimension;
+/*-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+ return UITableViewAutomaticDimension;
+ }*/
+
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+    //[(StreamTableViewCell*)[tableView cellForRowAtIndexPath:indexPath] changeTextHiddenStatus];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
