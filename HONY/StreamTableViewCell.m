@@ -32,20 +32,28 @@
 }
 
 -(void)changeTextHiddenStatus{
-    if(!unblurredImage){
-        unblurredImage = cellImageView.image;
-    }
-    if(!blurredImage){
-        blurredImage = [self blurImage:cellImageView.image];
-    }
-    if(imageBlurred){
-        cellImageView.image = unblurredImage;
-        textview.hidden = YES;
+    //Only show text, if the image has been downloaded already
+    if(cellImageView.image){
+        if(!unblurredImage){
+            unblurredImage = cellImageView.image;
+        }
+        if(!blurredImage){
+            blurredImage = [self blurImage:cellImageView.image];
+        }
+        if(imageBlurred){
+            cellImageView.image = unblurredImage;
+            textview.hidden = YES;
+        }else{
+            cellImageView.image = blurredImage;
+            textview.hidden = NO;
+        }
+        imageBlurred = !imageBlurred;
     }else{
-        cellImageView.image = blurredImage;
-        textview.hidden = NO;
+        //Prepare a blurred image for performance reasons
+        if(!blurredImage){
+            blurredImage = [self blurImage:cellImageView.image];
+        }
     }
-    imageBlurred = !imageBlurred;
 }
 
 -(void)setText:(NSString *)postText{
@@ -105,6 +113,8 @@
     textview.text = @"";
     textview.hidden = YES;
     textview.scrollEnabled = NO;
+    imageHeightConstraint.priority = 250;
+    imageHeightConstraint.constant = 100;
     [self setNeedsLayout];
     [self layoutIfNeeded];
 }

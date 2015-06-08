@@ -161,4 +161,11 @@ static HPPostHandler* handler = NULL;
     return handler;
 }
 
+-(void)loadShuffledPosts: (int) amount{
+//    self.posts =
+    for(int i=0; i<amount; i++){
+        
+    }
+}
+
 @end

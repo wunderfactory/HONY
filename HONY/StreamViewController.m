@@ -43,8 +43,8 @@
     [super viewDidLoad];
     streamTableView.dataSource = self;
     streamTableView.delegate = self;
-    streamTableView.rowHeight = UITableViewAutomaticDimension;
-    streamTableView.estimatedRowHeight = 400;
+    //streamTableView.rowHeight = UITableViewAutomaticDimension;
+    //streamTableView.estimatedRowHeight = 110;
     
     [self setNeedsStatusBarAppearanceUpdate];
     [[HPPostHandler sharedPostHandler] startSession];
@@ -169,12 +169,15 @@
         url = post.originalPhoto[@"url"];
     }
     
+    cell.imageLoadingActivityIndicator.hidesWhenStopped = YES;
+    [cell.imageLoadingActivityIndicator startAnimating];
     //[cell.cellImageView setImageWithURL:url placeholderImage:NULL];
     [cell.cellImageView setImageWithURLRequest:[NSURLRequest requestWithURL:url] placeholderImage:NULL
                                        success: ^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image){
                                            //[cell.cellImageView setAlpha:0.0];
                                            //[streamTableView reloadData];
                                            [cell.cellImageView setImage:image];
+                                           [cell.imageLoadingActivityIndicator stopAnimating];
                                            
                                            [cell.cellImageView setNeedsLayout];
                                            [cell.cellImageView layoutIfNeeded];
@@ -201,6 +204,7 @@
     }
     
     cell.imageHeightConstraint.constant = cellHeight;
+    //cell.imageHeightConstraint.priority = 800;
     [cell.cellImageView setNeedsLayout];
     [cell.cellImageView layoutIfNeeded];
     [cell setNeedsLayout];
@@ -214,9 +218,21 @@
     return [[HPPostHandler sharedPostHandler].posts count];
 }
 
-/*-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
- return UITableViewAutomaticDimension;
- }*/
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    CGFloat cellHeight = 0;
+    NSMutableArray* postArray = [HPPostHandler sharedPostHandler].posts;
+    NSInteger postNumberInTableView = indexPath.row;
+    HPTumblrPost* post = (HPTumblrPost *)[postArray objectAtIndex:postNumberInTableView];
+    
+    for (NSDictionary* photo in post.photos) {
+        if ([photo[@"width"]integerValue] > self.view.bounds.size.width/3*2 && [photo[@"width"] integerValue]>self.view.bounds.size.width/3*2) {
+            CGFloat aspectRatio = streamTableView.bounds.size.width / [photo[@"width"] integerValue];
+            cellHeight = [photo[@"height"] integerValue] * aspectRatio;
+            break;
+        }
+    }
+    return cellHeight;
+}
 
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
     //[(StreamTableViewCell*)[tableView cellForRowAtIndexPath:indexPath] changeTextHiddenStatus];

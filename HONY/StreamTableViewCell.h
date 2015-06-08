@@ -17,6 +17,7 @@
 @property (nonatomic) BOOL imageBlurred;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewHeightConstraint;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *imageLoadingActivityIndicator;
 
 -(void)changeTextHiddenStatus;
 -(void)setText:(NSString*)postText;

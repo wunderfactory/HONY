@@ -22,4 +22,6 @@
 - (void)addOldPosts:(int)amount withRealAmount:(BOOL) withRealAmount;
 - (void)loadNewPosts;
 - (HPTumblrPost*)shuffeledPost;
+-(void)loadShuffledPosts: (int) amount;
+-(void)loadMoreShuffledPosts: (int)amount;
 @end
