@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="g5m-tE-Mv4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E26a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="g5m-tE-Mv4">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -159,23 +159,30 @@
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ahw-Yy-ZoB" userLabel="ImageLoadingActivityIndicator">
                                                     <rect key="frame" x="150" y="190" width="20" height="20"/>
                                                 </activityIndicatorView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Test" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVK-8g-FwN">
-                                                    <rect key="frame" x="0.0" y="31" width="320" height="38"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xhn-ga-ySM" customClass="FXBlurView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                                    <subviews>
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" scrollEnabled="NO" editable="NO" text="Test" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVK-8g-FwN">
+                                                            <rect key="frame" x="0.0" y="31" width="320" height="38"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="YnE-40-Ekw"/>
+                                                            </constraints>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        </textView>
+                                                    </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="YnE-40-Ekw"/>
-                                                    </constraints>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="bVx-nY-FgK" firstAttribute="top" secondItem="Omw-SV-Eht" secondAttribute="top" id="3I1-DV-ZCk"/>
-                                                <constraint firstItem="BVK-8g-FwN" firstAttribute="leading" secondItem="bVx-nY-FgK" secondAttribute="leading" id="3K2-6o-32k"/>
-                                                <constraint firstItem="BVK-8g-FwN" firstAttribute="trailing" secondItem="bVx-nY-FgK" secondAttribute="trailing" id="MpZ-3a-YHx"/>
+                                                <constraint firstItem="Xhn-ga-ySM" firstAttribute="leading" secondItem="bVx-nY-FgK" secondAttribute="leading" id="Ej5-me-z0J"/>
+                                                <constraint firstItem="Xhn-ga-ySM" firstAttribute="bottom" secondItem="bVx-nY-FgK" secondAttribute="bottom" id="HZG-KY-Ww3"/>
+                                                <constraint firstItem="Xhn-ga-ySM" firstAttribute="top" secondItem="bVx-nY-FgK" secondAttribute="top" id="LYy-gY-upQ"/>
+                                                <constraint firstItem="Xhn-ga-ySM" firstAttribute="trailing" secondItem="bVx-nY-FgK" secondAttribute="trailing" id="NWE-0M-jxN"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="bVx-nY-FgK" secondAttribute="bottom" id="Oun-PY-Iy2"/>
-                                                <constraint firstItem="BVK-8g-FwN" firstAttribute="centerY" secondItem="bVx-nY-FgK" secondAttribute="centerY" id="TpW-M5-n4N"/>
                                                 <constraint firstAttribute="centerX" secondItem="ahw-Yy-ZoB" secondAttribute="centerX" id="Vzm-7J-mcv"/>
                                                 <constraint firstAttribute="trailing" secondItem="bVx-nY-FgK" secondAttribute="trailing" id="d6o-Rd-aek"/>
                                                 <constraint firstAttribute="centerY" secondItem="ahw-Yy-ZoB" secondAttribute="centerY" id="mk9-fH-3IQ"/>
@@ -183,6 +190,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="blur" destination="Xhn-ga-ySM" id="js1-6B-QZ4"/>
                                             <outlet property="cellImageView" destination="bVx-nY-FgK" id="PbY-FE-py4"/>
                                             <outlet property="imageHeightConstraint" destination="gbp-jJ-Fa0" id="fWD-P9-IPi"/>
                                             <outlet property="imageLoadingActivityIndicator" destination="ahw-Yy-ZoB" id="JDg-ro-2Yu"/>

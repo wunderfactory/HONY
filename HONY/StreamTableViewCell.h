@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FXBlurView.h"
 
 @interface StreamTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet FXBlurView *blur;
 @property (weak, nonatomic) IBOutlet UIImageView *cellImageView;
 @property (weak, nonatomic) IBOutlet UITextView *textview;
 @property (strong, nonatomic) UIImage* unblurredImage;
@@ -25,4 +27,8 @@
 -(UIImage*)blurImage: (UIImage*)theImage;
 
 -(void)prepareForReuse;
+
+- (void)showBlur;
+- (void)hideBlur;
+
 @end

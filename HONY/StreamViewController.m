@@ -198,8 +198,26 @@
     return cellHeight;
 }
 
--(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    StreamTableViewCell *cell = [streamTableView dequeueReusableCellWithIdentifier:@"ImageCell"];
+    
+    if (cell.blur.alpha == 0.0) {
+        [cell showBlur];
+    }
+    else {
+        [cell hideBlur];
+    }
+}
+
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
     //[(StreamTableViewCell*)[tableView cellForRowAtIndexPath:indexPath] changeTextHiddenStatus];
+    
+//    StreamTableViewCell* cell = [streamTableView dequeueReusableCellWithIdentifier:@"ImageCell"];
+//    
+//    [cell hideBlur];
 }
 
 /*
