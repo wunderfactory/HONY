@@ -8,6 +8,7 @@
 
 #import "StreamTableViewCell.h"
 #import <QuartzCore/QuartzCore.h>
+#import "FXBlurView.h"
 
 @implementation StreamTableViewCell{
     

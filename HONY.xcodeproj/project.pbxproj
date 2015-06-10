@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181A77331B28BDA9000E7002 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 181A77321B28BDA9000E7002 /* FXBlurView.m */; };
 		1835925E193770CD007F6A9B /* coverphoto1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1835925D193770CD007F6A9B /* coverphoto1.png */; };
 		184A2AB71934B580006465C9 /* HONYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184A2AB61934B580006465C9 /* HONYViewController.m */; };
 		18A99CF91934E790008977C1 /* honytitle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18A99CF81934E790008977C1 /* honytitle.jpg */; };
@@ -64,6 +65,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		181A77311B28BDA9000E7002 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
+		181A77321B28BDA9000E7002 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
 		1835925D193770CD007F6A9B /* coverphoto1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coverphoto1.png; sourceTree = "<group>"; };
 		184A2AB51934B580006465C9 /* HONYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HONYViewController.h; sourceTree = "<group>"; };
 		184A2AB61934B580006465C9 /* HONYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HONYViewController.m; sourceTree = "<group>"; };
@@ -160,6 +163,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		181A77301B28BDA9000E7002 /* FXBlurView */ = {
+			isa = PBXGroup;
+			children = (
+				181A77311B28BDA9000E7002 /* FXBlurView.h */,
+				181A77321B28BDA9000E7002 /* FXBlurView.m */,
+			);
+			path = FXBlurView;
+			sourceTree = "<group>";
+		};
 		8376DA0819333FC700F2FBBE = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +260,7 @@
 				8376DA2F19333FC700F2FBBE /* Images.xcassets */,
 				8376DA571933535D00F2FBBE /* BebasNeue.ttf */,
 				18B1FF55193627D40087DE8B /* Raleway-Regular.ttf */,
+				181A77301B28BDA9000E7002 /* FXBlurView */,
 				8376DA1B19333FC700F2FBBE /* Supporting Files */,
 			);
 			path = HONY;
@@ -333,7 +346,7 @@
 				ORGANIZATIONNAME = "Magnus Langanke";
 				TargetAttributes = {
 					8376DA1019333FC700F2FBBE = {
-						DevelopmentTeam = W7QVV9C455;
+						DevelopmentTeam = HKH74J3YRQ;
 					};
 					8376DA3419333FC700F2FBBE = {
 						TestTargetID = 8376DA1019333FC700F2FBBE;
@@ -433,6 +446,7 @@
 				8376DA4F193342CB00F2FBBE /* CollectionCell.m in Sources */,
 				1F4A89B51B1E36200066DB67 /* StreamTableViewCell.m in Sources */,
 				18DADD941937821600C3EE8B /* CustomCell.m in Sources */,
+				181A77331B28BDA9000E7002 /* FXBlurView.m in Sources */,
 				8376DA2119333FC700F2FBBE /* main.m in Sources */,
 				8376DA2519333FC700F2FBBE /* HOAppDelegate.m in Sources */,
 				83B461951943328D00EBCBDF /* HPTumblrPost.m in Sources */,
