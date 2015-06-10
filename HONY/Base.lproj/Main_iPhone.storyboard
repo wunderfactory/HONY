@@ -117,6 +117,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="kji-Ek-LBB" userLabel="StreamLoadingActivityIndicator">
+                                <rect key="frame" x="150" y="274" width="20" height="20"/>
+                            </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="csT-e8-nzE" userLabel="StatusBarBG">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -153,7 +156,7 @@
                                                         <constraint firstAttribute="height" constant="100" id="gbp-jJ-Fa0"/>
                                                     </constraints>
                                                 </imageView>
-                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ahw-Yy-ZoB">
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ahw-Yy-ZoB" userLabel="ImageLoadingActivityIndicator">
                                                     <rect key="frame" x="150" y="190" width="20" height="20"/>
                                                 </activityIndicatorView>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Test" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVK-8g-FwN">
@@ -198,6 +201,8 @@
                             <constraint firstAttribute="trailingMargin" secondItem="O57-Ys-nSv" secondAttribute="trailing" constant="-16" id="U2f-eG-GZb"/>
                             <constraint firstItem="csT-e8-nzE" firstAttribute="leading" secondItem="Tb0-Ug-Eef" secondAttribute="leading" id="Vkw-YT-PfX"/>
                             <constraint firstItem="O57-Ys-nSv" firstAttribute="bottom" secondItem="Iq2-OD-zDE" secondAttribute="top" id="XcL-dl-UvK"/>
+                            <constraint firstAttribute="centerX" secondItem="kji-Ek-LBB" secondAttribute="centerX" id="aRa-cp-tOJ"/>
+                            <constraint firstAttribute="centerY" secondItem="kji-Ek-LBB" secondAttribute="centerY" id="gFB-9c-rwA"/>
                             <constraint firstItem="csT-e8-nzE" firstAttribute="bottom" secondItem="pSx-ps-s9y" secondAttribute="bottom" id="gYc-t2-VNV"/>
                             <constraint firstItem="csT-e8-nzE" firstAttribute="top" secondItem="Tb0-Ug-Eef" secondAttribute="top" id="mkw-2S-eT4"/>
                             <constraint firstItem="O57-Ys-nSv" firstAttribute="leading" secondItem="Tb0-Ug-Eef" secondAttribute="leadingMargin" constant="-16" id="ndk-ak-32L"/>
@@ -206,6 +211,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="streamLoadingActivityIndicator" destination="kji-Ek-LBB" id="pNO-ua-xlg"/>
                         <outlet property="streamTableView" destination="Iq2-OD-zDE" id="SeI-AG-A41"/>
                         <outlet property="topBar" destination="O57-Ys-nSv" id="Vel-DS-moC"/>
                         <segue destination="s2T-Rw-ifq" kind="modal" identifier="feedtowalkthrough" id="nrV-7d-VvE"/>
@@ -687,9 +693,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Zx6-IX-Yvm"/>
         <segue reference="LaW-Ic-uhT"/>
-        <segue reference="sGx-0M-zJb"/>
+        <segue reference="Zx6-IX-Yvm"/>
+        <segue reference="vjb-7Z-YWF"/>
         <segue reference="nrV-7d-VvE"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "HPTumblrPost.h"
 
+#import <sys/socket.h>
+#import <netinet/in.h>
+#import <SystemConfiguration/SystemConfiguration.h>
+
 @interface HPPostHandler : NSObject
 
 -(instancetype) initWithTumblrName:(NSString*)blogName;
@@ -22,6 +26,8 @@
 - (void)addOldPosts:(int)amount withRealAmount:(BOOL) withRealAmount;
 - (void)loadNewPosts;
 - (HPTumblrPost*)shuffeledPost;
--(void)loadShuffledPosts: (int) amount;
--(void)loadMoreShuffledPosts: (int)amount;
+-(void)loadShuffledPosts: (int) amount completion:(void (^)())completion;
+-(void)loadMoreShuffledPosts: (int)amount completion:(void (^)())completion;
+
+-(BOOL)hasConnectivity;
 @end

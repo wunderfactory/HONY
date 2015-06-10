@@ -24,6 +24,8 @@
 		1F4A89B51B1E36200066DB67 /* StreamTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4A89B41B1E36200066DB67 /* StreamTableViewCell.m */; };
 		1F9BAFAA1B1B0F4B007DD42E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9BAFA91B1B0F4B007DD42E /* SWRevealViewController.m */; };
 		1F9BAFAD1B1B0F7F007DD42E /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9BAFAC1B1B0F7F007DD42E /* SidebarViewController.m */; };
+		1FAE0F7F1B289DCC0092F057 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FAE0F7E1B289DCC0092F057 /* SystemConfiguration.framework */; };
+		1FAE0F821B289FC20092F057 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAE0F811B289FC20092F057 /* Reachability.m */; };
 		8361AD08194DE335002A37C7 /* ImageScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8361AD07194DE335002A37C7 /* ImageScrollViewController.m */; };
 		8376DA1519333FC700F2FBBE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8376DA1419333FC700F2FBBE /* Foundation.framework */; };
 		8376DA1719333FC700F2FBBE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8376DA1619333FC700F2FBBE /* CoreGraphics.framework */; };
@@ -89,6 +91,9 @@
 		1F9BAFA91B1B0F4B007DD42E /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		1F9BAFAB1B1B0F7F007DD42E /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarViewController.h; sourceTree = "<group>"; };
 		1F9BAFAC1B1B0F7F007DD42E /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarViewController.m; sourceTree = "<group>"; };
+		1FAE0F7E1B289DCC0092F057 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1FAE0F801B289FC20092F057 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		1FAE0F811B289FC20092F057 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		481DC6893C1E4743B44E3996 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8361AD06194DE335002A37C7 /* ImageScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScrollViewController.h; sourceTree = "<group>"; };
 		8361AD07194DE335002A37C7 /* ImageScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageScrollViewController.m; sourceTree = "<group>"; };
@@ -134,6 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FAE0F7F1B289DCC0092F057 /* SystemConfiguration.framework in Frameworks */,
 				8376DA1719333FC700F2FBBE /* CoreGraphics.framework in Frameworks */,
 				8376DA1919333FC700F2FBBE /* UIKit.framework in Frameworks */,
 				8376DA1519333FC700F2FBBE /* Foundation.framework in Frameworks */,
@@ -177,6 +183,7 @@
 		8376DA1319333FC700F2FBBE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1FAE0F7E1B289DCC0092F057 /* SystemConfiguration.framework */,
 				8376DA1419333FC700F2FBBE /* Foundation.framework */,
 				8376DA1619333FC700F2FBBE /* CoreGraphics.framework */,
 				8376DA1819333FC700F2FBBE /* UIKit.framework */,
@@ -234,6 +241,8 @@
 				18DADD90193781F000C3EE8B /* CustomCell.xib */,
 				18DADD921937821600C3EE8B /* CustomCell.h */,
 				18DADD931937821600C3EE8B /* CustomCell.m */,
+				1FAE0F801B289FC20092F057 /* Reachability.h */,
+				1FAE0F811B289FC20092F057 /* Reachability.m */,
 				18A99CF81934E790008977C1 /* honytitle.jpg */,
 				1835925D193770CD007F6A9B /* coverphoto1.png */,
 				8376DA2F19333FC700F2FBBE /* Images.xcassets */,
@@ -429,6 +438,7 @@
 				83B461951943328D00EBCBDF /* HPTumblrPost.m in Sources */,
 				184A2AB71934B580006465C9 /* HONYViewController.m in Sources */,
 				8376DA56193346B500F2FBBE /* DPWebConnector.m in Sources */,
+				1FAE0F821B289FC20092F057 /* Reachability.m in Sources */,
 				1F9BAFAD1B1B0F7F007DD42E /* SidebarViewController.m in Sources */,
 				18D73DA219378B55005EAE68 /* PageContentViewController.m in Sources */,
 				18DADD8F193779A400C3EE8B /* NewsViewController.m in Sources */,

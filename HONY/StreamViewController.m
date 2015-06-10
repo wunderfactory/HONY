@@ -24,7 +24,8 @@
 
 @implementation StreamViewController
 @synthesize selectedIndex, topRefreshControl, totalPosts, shuffelPost;
-@synthesize streamTableView, topBar;
+@synthesize streamTableView, topBar, shuffelButton;
+@synthesize shuffel, streamLoadingActivityIndicator;
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -33,6 +34,11 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
         
         [self performSegueWithIdentifier:@"feedToWalkthrough" sender:nil];
+    }
+    
+    if(![[HPPostHandler sharedPostHandler] hasConnectivity]){
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Error connecting to internet." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alertView show];
     }
     [streamTableView reloadData];
     [streamTableView setNeedsLayout];
@@ -56,14 +62,6 @@
     streamTableView.bottomRefreshControl = [UIRefreshControl new];
     [streamTableView.bottomRefreshControl addTarget:self action:@selector(loadOldPosts) forControlEvents:UIControlEventValueChanged];
     
-    
-    /*UIView *topBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 60)];
-     UILabel *honyLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 25, self.view.bounds.size.width, 30)];
-     honyLabel.text = @"Humans of New York";
-     honyLabel.textAlignment = NSTextAlignmentCenter;
-     honyLabel.textColor = [UIColor whiteColor];
-     honyLabel.font = [UIFont fontWithName:@"BebasNeue" size:32.0];*/
-    
     //Add Menu Item to Top Bar
     SWRevealViewController* revealViewController = self.revealViewController;
     if(revealViewController){
@@ -76,30 +74,14 @@
         [topBar addSubview:menuItem];
     }
     
-    /*
-     [topBar addSubview:honyLabel];
-     topBar.backgroundColor = [UIColor colorWithRed:26/255.0 green:33/255.0 blue:41/255.0 alpha:0.75];
-     [self.view addSubview:topBar];
-     */
     
-    //TBD: This Code only creates an image from the color right? Why not do this:
-    //self.tabBarController.tabBar.backgroundColor = ...
-    /*UIView* view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tabBarController.tabBar.frame.size.width, self.tabBarController.tabBar.frame.size.height)];
-     view.backgroundColor = [UIColor colorWithRed:26/255.0 green:33/255.0 blue:41/255.0 alpha:0.75];
-     UIGraphicsBeginImageContext(view.bounds.size);
-     [view.layer renderInContext:UIGraphicsGetCurrentContext()];
-     UIImage *tabbarBackground = UIGraphicsGetImageFromCurrentImageContext();
-     UIGraphicsEndImageContext();
-     
-     self.tabBarController.tabBar.backgroundImage = tabbarBackground;
-     
-     [self.tabBarController.tabBar setSelectedImageTintColor:[UIColor whiteColor]];*/
     
-    //[scroll setContentInset:UIEdgeInsetsMake(topBar.frame.size.height, 0, self.tabBarController.tabBar.frame.size.height, 0)];
-    
-    UIButton* shuffelButton = [[UIButton alloc] initWithFrame:CGRectMake(topBar.bounds.size.width - 5 - 20, topBar.bounds.size.height - 5- 25, 20, 20)];
-    [shuffelButton addTarget:self action:@selector(loadShuffelView) forControlEvents:UIControlEventTouchUpInside];
-    [shuffelButton setBackgroundImage:[UIImage imageNamed:@"NewShuffle"] forState:UIControlStateNormal];
+    shuffelButton = [[UIButton alloc] initWithFrame:CGRectMake(topBar.bounds.size.width - 8 - 20, topBar.bounds.size.height - 5- 25, 20, 20)];
+    [shuffelButton addTarget:self action:@selector(shuffleButtonPressed) forControlEvents:UIControlEventTouchDown];
+    UIImage* shuffelButtonImage = [[UIImage imageNamed:@"NewShuffle"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    [shuffelButton setImage:shuffelButtonImage forState:UIControlStateNormal];
+    shuffelButton.tintColor = [UIColor whiteColor];
+//    [shuffelButton setBackgroundImage:[UIImage imageNamed:@"NewShuffle"] forState:UIControlStateNormal];
     [topBar addSubview:shuffelButton];
 }
 
@@ -108,32 +90,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
-
-
 #pragma mark streamTableView
 
 
 - (UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
 }
-
-
-/*-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
- selectedIndex = (int)indexPath.row;
- //    [self performSegueWithIdentifier:@"toTestFull" sender:self];
- [self performSegueWithIdentifier:@"testingshit" sender:self];
- 
- }*/
-
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     CGFloat cellHeight = 100;
@@ -238,33 +200,35 @@
     //[(StreamTableViewCell*)[tableView cellForRowAtIndexPath:indexPath] changeTextHiddenStatus];
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqual:@"toFullscreen"]) {
-        HOFullscreenViewController* full = (HOFullscreenViewController *) segue.destinationViewController;
-        full.post = (HPTumblrPost *)[[HPPostHandler sharedPostHandler].posts objectAtIndex:selectedIndex];
-        full.shuffel = NO;
-    } else if ([[segue identifier] isEqual:@"toShuffel"]) {
-        HOFullscreenViewController* full = (HOFullscreenViewController *) segue.destinationViewController;
-        full.post = shuffelPost;
-        full.totalPosts = totalPosts;
-        full.shuffel = YES;
-    } else if ([[segue identifier] isEqual:@"toTestFull"]){
-        ImageScrollViewController* full = (ImageScrollViewController *) segue.destinationViewController;
-        full.post = (HPTumblrPost *)[[HPPostHandler sharedPostHandler].posts objectAtIndex:selectedIndex];
-        full.shuffel = NO;
-    } else if ([[segue identifier] isEqual:@"toTestShuffel"]) {
-        ImageScrollViewController* full = (ImageScrollViewController *) segue.destinationViewController;
-        full.post = shuffelPost;
-        full.shuffel = YES;
-        [MBProgressHUD showHUDAddedTo:full.view animated:YES];
-    } else if ([segue.identifier isEqualToString:@"testingshit"]) {
-        HOFeedPageViewController* feedPage = (HOFeedPageViewController *) segue.destinationViewController;
-        if (selectedIndex >= [HPPostHandler sharedPostHandler].posts.count - 1) {
-            [[HPPostHandler sharedPostHandler] addOldPosts:9 withRealAmount:YES];
-        }
-        feedPage.startingIndex = selectedIndex;
-    }
-}
+/*
+ -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ if ([[segue identifier] isEqual:@"toFullscreen"]) {
+ HOFullscreenViewController* full = (HOFullscreenViewController *) segue.destinationViewController;
+ full.post = (HPTumblrPost *)[[HPPostHandler sharedPostHandler].posts objectAtIndex:selectedIndex];
+ full.shuffel = NO;
+ } else if ([[segue identifier] isEqual:@"toShuffel"]) {
+ HOFullscreenViewController* full = (HOFullscreenViewController *) segue.destinationViewController;
+ full.post = shuffelPost;
+ full.totalPosts = totalPosts;
+ full.shuffel = YES;
+ } else if ([[segue identifier] isEqual:@"toTestFull"]){
+ ImageScrollViewController* full = (ImageScrollViewController *) segue.destinationViewController;
+ full.post = (HPTumblrPost *)[[HPPostHandler sharedPostHandler].posts objectAtIndex:selectedIndex];
+ full.shuffel = NO;
+ } else if ([[segue identifier] isEqual:@"toTestShuffel"]) {
+ ImageScrollViewController* full = (ImageScrollViewController *) segue.destinationViewController;
+ full.post = shuffelPost;
+ full.shuffel = YES;
+ [MBProgressHUD showHUDAddedTo:full.view animated:YES];
+ } else if ([segue.identifier isEqualToString:@"testingshit"]) {
+ HOFeedPageViewController* feedPage = (HOFeedPageViewController *) segue.destinationViewController;
+ if (selectedIndex >= [HPPostHandler sharedPostHandler].posts.count - 1) {
+ [[HPPostHandler sharedPostHandler] addOldPosts:9 withRealAmount:YES];
+ }
+ feedPage.startingIndex = selectedIndex;
+ }
+ }
+ */
 
 - (void) loadNewPosts {
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -278,20 +242,53 @@
 
 - (void) loadOldPosts {
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [[HPPostHandler sharedPostHandler] addOldPosts:30 withRealAmount:YES];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [streamTableView.bottomRefreshControl endRefreshing];
-            [streamTableView reloadData];
-        });
+        if(!shuffel){
+            [[HPPostHandler sharedPostHandler] addOldPosts:30 withRealAmount:YES];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [streamTableView.bottomRefreshControl endRefreshing];
+                [streamTableView reloadData];
+            });
+        }else{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[HPPostHandler sharedPostHandler] loadMoreShuffledPosts:30 completion:^{
+                    NSLog(@"More Shuffled Posts loaded");
+                    [streamTableView.bottomRefreshControl endRefreshing];
+                    [streamTableView reloadData];
+                }];
+            });
+        }
     });
 }
 
-- (void) loadShuffelView {
-    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        shuffelPost = [[HPPostHandler sharedPostHandler] shuffeledPost];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self performSegueWithIdentifier:@"toTestShuffel" sender:self];
+- (void) shuffleButtonPressed {
+    NSLog(@"Shuffle Button Pressed");
+    if(shuffel){
+        shuffelButton.tintColor = [UIColor whiteColor];
+        [[HPPostHandler sharedPostHandler] startSession];
+        streamTableView.hidden = NO;
+        [streamLoadingActivityIndicator stopAnimating];
+        [streamTableView reloadData];
+    }else{
+        shuffelButton.tintColor = [UIColor colorWithRed:0 green:145.0/255.0 blue:247.0/255.0 alpha:1];
+        [streamLoadingActivityIndicator startAnimating];
+        streamTableView.hidden = YES;
+        dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            /*shuffelPost = [[HPPostHandler sharedPostHandler] shuffeledPost];
+             dispatch_async(dispatch_get_main_queue(), ^{
+             [self performSegueWithIdentifier:@"toTestShuffel" sender:self];
+             });*/
+            
+            [[HPPostHandler sharedPostHandler] loadShuffledPosts:10 completion:^{
+                NSLog(@"Completion Block");
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [streamTableView reloadData];
+                    streamTableView.hidden = NO;
+                    [streamLoadingActivityIndicator stopAnimating];
+                });
+            }];
         });
-    });
+    }
+    shuffel = !shuffel;
+    
 }
 @end

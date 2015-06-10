@@ -14,10 +14,12 @@
 @property (strong, nonatomic) UIRefreshControl *topRefreshControl;
 @property (weak, nonatomic) IBOutlet UITableView *streamTableView;
 @property (weak, nonatomic) IBOutlet UIView *topBar;
+@property (strong, nonatomic) UIButton* shuffelButton;
 
 @property int selectedIndex;
 @property int totalPosts;
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *streamLoadingActivityIndicator;
 @property (strong, nonatomic) HPTumblrPost* shuffelPost;
 @property BOOL shuffel;
 
