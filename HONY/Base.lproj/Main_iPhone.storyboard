@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E26a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="g5m-tE-Mv4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="g5m-tE-Mv4">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -214,7 +214,7 @@
                         <outlet property="streamLoadingActivityIndicator" destination="kji-Ek-LBB" id="pNO-ua-xlg"/>
                         <outlet property="streamTableView" destination="Iq2-OD-zDE" id="SeI-AG-A41"/>
                         <outlet property="topBar" destination="O57-Ys-nSv" id="Vel-DS-moC"/>
-                        <segue destination="s2T-Rw-ifq" kind="modal" identifier="feedtowalkthrough" id="nrV-7d-VvE"/>
+                        <segue destination="s2T-Rw-ifq" kind="modal" identifier="feedToWalkthrough" id="nrV-7d-VvE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7T4-rx-ahR" userLabel="First Responder" sceneMemberID="firstResponder"/>

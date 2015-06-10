@@ -156,9 +156,9 @@
                                        failure:NULL];
     [cell setText:post.caption];
     
-    CGFloat textViewHeight = [cell.textview sizeThatFits:cell.textview.frame.size].height;
+    CGFloat textViewHeight = [cell.textview sizeThatFits:CGSizeMake(cell.textview.bounds.size.width, CGFLOAT_MAX)].height;
     CGFloat textViewTopMargin = 10;
-    if(textViewHeight > cellHeight - 2* textViewTopMargin){
+    if(textViewHeight > (cellHeight - 2* textViewTopMargin)){
         cell.textViewHeightConstraint.constant = cellHeight - 2* textViewTopMargin;
         cell.textview.scrollEnabled = YES;
     }else{
@@ -169,6 +169,8 @@
     //cell.imageHeightConstraint.priority = 800;
     [cell.cellImageView setNeedsLayout];
     [cell.cellImageView layoutIfNeeded];
+    [cell.textview setNeedsLayout];
+    [cell.textview layoutIfNeeded];
     [cell setNeedsLayout];
     [cell layoutIfNeeded];
     [streamTableView layoutIfNeeded];
@@ -262,6 +264,8 @@
 
 - (void) shuffleButtonPressed {
     NSLog(@"Shuffle Button Pressed");
+    //Scroll to top
+    [streamTableView scrollRectToVisible:CGRectMake(0, 0, 0, 0) animated:YES];
     if(shuffel){
         shuffelButton.tintColor = [UIColor whiteColor];
         [[HPPostHandler sharedPostHandler] startSession];
