@@ -37,6 +37,18 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>api.tumblr.com</key>
+			<string></string>
+			<key>lab.wunderfactory.de</key>
+			<string></string>
+		</dict>
+	</dict>
 	<key>UIAppFonts</key>
 	<array>
 		<string>BebasNeue.ttf</string>
