@@ -28,8 +28,8 @@
     // Setting up Push Notification
 
     //TBD: This does not work in iOS 8 & later.
-    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
-    [[UIApplication sharedApplication] registerForRemoteNotifications];
+//    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+//    [[UIApplication sharedApplication] registerForRemoteNotifications];
     //[[UIApplication sharedApplication] registerUserNotificationSettings:(UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)];
     
     
@@ -37,6 +37,15 @@
     pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
     pageControl.backgroundColor = [UIColor whiteColor];
+    
+    
+    
+    if (![@"1" isEqualToString:[[NSUserDefaults standardUserDefaults] objectForKey:@"Avalue"]]) {
+        [[NSUserDefaults standardUserDefaults] setValue:@"1" forKey:@"Avalue"];        
+        
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"listInFeed"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
     
     
     return YES;
@@ -47,7 +56,7 @@
 
 
 // Push Notification
-
+/*
 - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
     deviceTokenString = [[[deviceToken description]
@@ -70,7 +79,7 @@
 
 - (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
 {
-    NSLog(@"Failed to register: %@", error);
+//    NSLog(@"Failed to register: %@", error);
     
     
     
@@ -96,7 +105,7 @@
 }
 
 
-
+*/
 
 
 - (void)applicationWillResignActive:(UIApplication *)application

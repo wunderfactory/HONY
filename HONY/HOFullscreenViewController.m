@@ -85,7 +85,7 @@
     shareButton.hidden = YES;
     [self.view addSubview:shareButton];
     
-    UIButton* shuffelButton = [[UIButton alloc] initWithFrame:CGRectMake(closebutton.frame.origin.x - 10 - 33, 5, 33, 22)];
+    UIButton* shuffelButton = [[UIButton alloc] initWithFrame:CGRectMake(closebutton.frame.origin.x - 10 - 33, 5, 28, 28)];
     [shuffelButton setBackgroundImage:[UIImage imageNamed:@"reshuffel"] forState:UIControlStateNormal];
     [shuffelButton addTarget:self action:@selector(nextShuffel) forControlEvents:UIControlEventTouchUpInside];
     shuffelButton.hidden = !shuffel;

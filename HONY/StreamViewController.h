@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "HPTumblrPost.h"
 
-@interface StreamViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface StreamViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate>
 
 @property (strong, nonatomic) UIRefreshControl *topRefreshControl;
+@property (weak, nonatomic) IBOutlet UICollectionView *streamCollectionView;
 @property (weak, nonatomic) IBOutlet UITableView *streamTableView;
 @property (weak, nonatomic) IBOutlet UIView *topBar;
 @property (strong, nonatomic) UIButton* shuffelButton;

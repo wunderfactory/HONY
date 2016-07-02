@@ -13,13 +13,14 @@
 
 @property (weak, nonatomic) IBOutlet FXBlurView *blur;
 @property (weak, nonatomic) IBOutlet UIImageView *cellImageView;
-@property (weak, nonatomic) IBOutlet UITextView *textview;
+@property (weak, nonatomic) IBOutlet UILabel *textview;
 @property (strong, nonatomic) UIImage* unblurredImage;
 @property (strong, nonatomic) UIImage* blurredImage;
 @property (nonatomic) BOOL imageBlurred;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *imageLoadingActivityIndicator;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *commentHeightConstraint;
 
 -(void)changeTextHiddenStatus;
 -(void)setText:(NSString*)postText;
@@ -30,5 +31,6 @@
 
 - (void)showBlur;
 - (void)hideBlur;
+
 
 @end

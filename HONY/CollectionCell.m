@@ -15,10 +15,20 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        
+        cellPostImage.frame = frame;
     }
     return self;
 }
 
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    self.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    self.contentView.translatesAutoresizingMaskIntoConstraints = YES;
+}
 
 
 // Only override drawRect: if you perform custom drawing.

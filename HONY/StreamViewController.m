@@ -20,12 +20,14 @@
 
 @interface StreamViewController ()
 
+@property NSInteger selectedRow;
+
 @end
 
 @implementation StreamViewController
 @synthesize selectedIndex, topRefreshControl, totalPosts, shuffelPost;
 @synthesize streamTableView, topBar, shuffelButton;
-@synthesize shuffel, streamLoadingActivityIndicator;
+@synthesize shuffel, streamLoadingActivityIndicator, streamCollectionView, selectedRow;
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -47,8 +49,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    selectedRow = -1;
+    
     streamTableView.dataSource = self;
     streamTableView.delegate = self;
+    
+    streamCollectionView.dataSource = self;
+    streamCollectionView.delegate = self;
+    
+    NSLog(@"%i", [[NSUserDefaults standardUserDefaults] boolForKey:@"listInFeed"]);
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"listInFeed"] == YES) {
+        streamCollectionView.hidden = true;
+        [streamTableView reloadData];
+    }
+    else {
+        streamTableView.hidden = true;
+        [streamCollectionView reloadData];
+    }
+    
     //streamTableView.rowHeight = UITableViewAutomaticDimension;
     //streamTableView.estimatedRowHeight = 110;
     
@@ -61,6 +80,17 @@
     
     streamTableView.bottomRefreshControl = [UIRefreshControl new];
     [streamTableView.bottomRefreshControl addTarget:self action:@selector(loadOldPosts) forControlEvents:UIControlEventValueChanged];
+    
+    
+    
+//    [streamCollectionView registerNib:[UINib nibWithNibName:@"CollectionCell" bundle:nil] forCellWithReuseIdentifier:@"CollectionCell"];
+    [streamCollectionView addSubview:topRefreshControl];
+    streamCollectionView.alwaysBounceVertical = YES;
+    
+    streamCollectionView.bottomRefreshControl = [UIRefreshControl new];
+    [streamCollectionView.bottomRefreshControl addTarget:self action:@selector(loadOldPostsCollection) forControlEvents:UIControlEventValueChanged];
+    
+    
     
     //Add Menu Item to Top Bar
     SWRevealViewController* revealViewController = self.revealViewController;
@@ -83,6 +113,9 @@
     shuffelButton.tintColor = [UIColor whiteColor];
 //    [shuffelButton setBackgroundImage:[UIImage imageNamed:@"NewShuffle"] forState:UIControlStateNormal];
     [topBar addSubview:shuffelButton];
+    
+    
+//    [streamCollectionView layoutIfNeeded];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -160,7 +193,6 @@
     CGFloat textViewTopMargin = 10;
     if(textViewHeight > (cellHeight - 2* textViewTopMargin)){
         cell.textViewHeightConstraint.constant = cellHeight - 2* textViewTopMargin;
-        cell.textview.scrollEnabled = YES;
     }else{
         cell.textViewHeightConstraint.constant = textViewHeight;
     }
@@ -195,14 +227,16 @@
             break;
         }
     }
+    
+    
     return cellHeight;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    StreamTableViewCell *cell = [streamTableView dequeueReusableCellWithIdentifier:@"ImageCell"];
+    StreamTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ImageCell" forIndexPath:indexPath];
     
-    if (cell.blur.alpha == 0.0) {
+    if(cell.blur.alpha == 0) {
         [cell showBlur];
     }
     else {
@@ -211,13 +245,29 @@
 }
 
 
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    //[(StreamTableViewCell*)[tableView cellForRowAtIndexPath:indexPath] changeTextHiddenStatus];
+
+- (IBAction)switchLayout:(id)sender {
     
-//    StreamTableViewCell* cell = [streamTableView dequeueReusableCellWithIdentifier:@"ImageCell"];
-//    
-//    [cell hideBlur];
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"listInFeed"] == YES) {
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"listInFeed"];
+    }
+    else {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"listInFeed"];
+    }
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    NSLog(@"%i", [[NSUserDefaults standardUserDefaults] boolForKey:@"listInFeed"]);
+    
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"listInFeed"] == YES) {
+        streamCollectionView.hidden = true;
+        streamTableView.hidden = false;
+        [streamTableView reloadData];
+    }
+    else {
+        streamTableView.hidden = true;
+        streamCollectionView.hidden = false;
+        [streamCollectionView reloadData];
+    }
 }
 
 /*
@@ -256,6 +306,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [topRefreshControl endRefreshing];
             [streamTableView reloadData];
+            [streamCollectionView reloadData];
         });
     });
 }
@@ -313,4 +364,123 @@
     shuffel = !shuffel;
     
 }
+
+
+
+
+
+#pragma mark Collection View
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return [[HPPostHandler sharedPostHandler].posts count];
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CollectionCell *collectionCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionCell" forIndexPath:indexPath];
+    
+    HPTumblrPost* post = (HPTumblrPost *)[[HPPostHandler sharedPostHandler].posts objectAtIndex:indexPath.row];
+    
+    
+    NSURL *url = NULL;
+    for (NSDictionary* photo in post.photos) {
+        if ([photo[@"width"]integerValue] > self.view.bounds.size.width/3*2 && [photo[@"width"] integerValue]>self.view.bounds.size.width/3*2) {
+            url = photo[@"url"];
+            break;
+        }
+    }
+    if (url == NULL) {
+        url = post.originalPhoto[@"url"];
+    }
+    
+    [collectionCell.cellPostImage setImageWithURL:url placeholderImage:NULL];
+    
+    return collectionCell;
+}
+
+
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout *)collectionViewLayout
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(streamCollectionView.frame.size.width / 3, streamCollectionView.frame.size.width / 3);
+}
+
+
+
+- (UIEdgeInsets)collectionView:(UICollectionView*)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return UIEdgeInsetsMake(0, 0, 0, 0); // top, left, bottom, right
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    return 0.0;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return 0.0;
+}
+
+
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    selectedIndex = (int)indexPath.row;
+    //    [self performSegueWithIdentifier:@"toTestFull" sender:self];
+    [self performSegueWithIdentifier:@"testingshit" sender:self];
+    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqual:@"toFullscreen"]) {
+        HOFullscreenViewController* full = (HOFullscreenViewController *) segue.destinationViewController;
+        full.post = (HPTumblrPost *)[[HPPostHandler sharedPostHandler].posts objectAtIndex:selectedIndex];
+        full.shuffel = NO;
+    } else if ([[segue identifier] isEqual:@"toShuffel"]) {
+        HOFullscreenViewController* full = (HOFullscreenViewController *) segue.destinationViewController;
+        full.post = shuffelPost;
+        full.totalPosts = totalPosts;
+        full.shuffel = YES;
+    } else if ([[segue identifier] isEqual:@"toTestFull"]){
+        ImageScrollViewController* full = (ImageScrollViewController *) segue.destinationViewController;
+        full.post = (HPTumblrPost *)[[HPPostHandler sharedPostHandler].posts objectAtIndex:selectedIndex];
+        full.shuffel = NO;
+    } else if ([[segue identifier] isEqual:@"toTestShuffel"]) {
+        ImageScrollViewController* full = (ImageScrollViewController *) segue.destinationViewController;
+        full.post = shuffelPost;
+        full.shuffel = YES;
+        [MBProgressHUD showHUDAddedTo:full.view animated:YES];
+    } else if ([segue.identifier isEqualToString:@"testingshit"]) {
+        HOFeedPageViewController* feedPage = (HOFeedPageViewController *) segue.destinationViewController;
+        if (selectedIndex >= [HPPostHandler sharedPostHandler].posts.count - 1) {
+            [[HPPostHandler sharedPostHandler] addOldPosts:9 withRealAmount:YES];
+        }
+        feedPage.startingIndex = selectedIndex;
+    }
+}
+
+
+- (void) loadOldPostsCollection {
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [[HPPostHandler sharedPostHandler] addOldPosts:30 withRealAmount:YES];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [streamCollectionView.bottomRefreshControl endRefreshing];
+            [streamCollectionView reloadData];
+        });
+    });
+}
+
+- (void) loadShuffelView {
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        shuffelPost = [[HPPostHandler sharedPostHandler] shuffeledPost];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self performSegueWithIdentifier:@"toTestShuffel" sender:self];
+        });
+    });
+}
+
 @end

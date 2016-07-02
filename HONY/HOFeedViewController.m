@@ -63,6 +63,8 @@
 {
     [super viewDidLoad];
     
+    NSLog(@"opened");
+    
     [self setNeedsStatusBarAppearanceUpdate];
     [self.collectionView registerNib:[UINib nibWithNibName:@"CollectionCell" bundle:nil] forCellWithReuseIdentifier:@"CollectionCell"];
     [[HPPostHandler sharedPostHandler] startSession];
@@ -116,7 +118,7 @@
     [scroll setContentInset:UIEdgeInsetsMake(topBar.frame.size.height, 0, 0, 0)];
     //[scroll setContentInset:UIEdgeInsetsMake(topBar.frame.size.height, 0, self.tabBarController.tabBar.frame.size.height, 0)];
     
-    UIButton* shuffelButton = [[UIButton alloc] initWithFrame:CGRectMake(topBar.bounds.size.width - 5 - 20, topBar.bounds.size.height - 5- 25, 20, 20)];
+    UIButton* shuffelButton = [[UIButton alloc] initWithFrame:CGRectMake(topBar.bounds.size.width - 5 - 20, topBar.bounds.size.height - 5- 25, 28, 28)];
     [shuffelButton addTarget:self action:@selector(loadShuffelView) forControlEvents:UIControlEventTouchUpInside];
     [shuffelButton setBackgroundImage:[UIImage imageNamed:@"NewShuffle"] forState:UIControlStateNormal];
     [topBar addSubview:shuffelButton];

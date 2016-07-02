@@ -43,7 +43,6 @@
 		8376DA4119333FC700F2FBBE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8376DA3F19333FC700F2FBBE /* InfoPlist.strings */; };
 		8376DA4319333FC700F2FBBE /* HONYTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8376DA4219333FC700F2FBBE /* HONYTests.m */; };
 		8376DA4F193342CB00F2FBBE /* CollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8376DA4D193342CB00F2FBBE /* CollectionCell.m */; };
-		8376DA50193342CB00F2FBBE /* CollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8376DA4E193342CB00F2FBBE /* CollectionCell.xib */; };
 		8376DA531933430600F2FBBE /* HOFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8376DA521933430600F2FBBE /* HOFeedViewController.m */; };
 		8376DA56193346B500F2FBBE /* DPWebConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 8376DA55193346B500F2FBBE /* DPWebConnector.m */; };
 		8376DA581933543700F2FBBE /* BebasNeue.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8376DA571933535D00F2FBBE /* BebasNeue.ttf */; };
@@ -120,7 +119,6 @@
 		8376DA4219333FC700F2FBBE /* HONYTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HONYTests.m; sourceTree = "<group>"; };
 		8376DA4C193342CB00F2FBBE /* CollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCell.h; sourceTree = "<group>"; };
 		8376DA4D193342CB00F2FBBE /* CollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCell.m; sourceTree = "<group>"; };
-		8376DA4E193342CB00F2FBBE /* CollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionCell.xib; sourceTree = "<group>"; };
 		8376DA511933430600F2FBBE /* HOFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOFeedViewController.h; sourceTree = "<group>"; };
 		8376DA521933430600F2FBBE /* HOFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOFeedViewController.m; sourceTree = "<group>"; };
 		8376DA54193346B500F2FBBE /* DPWebConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPWebConnector.h; sourceTree = "<group>"; };
@@ -223,7 +221,6 @@
 				18D73DA019378B55005EAE68 /* PageContentViewController.m */,
 				8376DA4C193342CB00F2FBBE /* CollectionCell.h */,
 				8376DA4D193342CB00F2FBBE /* CollectionCell.m */,
-				8376DA4E193342CB00F2FBBE /* CollectionCell.xib */,
 				8376DA2319333FC700F2FBBE /* HOAppDelegate.h */,
 				8376DA2419333FC700F2FBBE /* HOAppDelegate.m */,
 				8376DA2619333FC700F2FBBE /* Main_iPhone.storyboard */,
@@ -382,7 +379,6 @@
 				18B1FF56193627E70087DE8B /* Raleway-Regular.ttf in Resources */,
 				8376DA581933543700F2FBBE /* BebasNeue.ttf in Resources */,
 				18D73DA519378C80005EAE68 /* Bild1.png in Resources */,
-				8376DA50193342CB00F2FBBE /* CollectionCell.xib in Resources */,
 				8376DA2B19333FC700F2FBBE /* Main_iPad.storyboard in Resources */,
 				8376DA3019333FC700F2FBBE /* Images.xcassets in Resources */,
 				1835925E193770CD007F6A9B /* coverphoto1.png in Resources */,
