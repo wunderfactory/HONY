@@ -181,11 +181,11 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="255" verticalCompressionResistancePriority="1000" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="410" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Iq2-OD-zDE">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="255" verticalCompressionResistancePriority="1000" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="410" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Iq2-OD-zDE">
                                 <rect key="frame" x="0.0" y="60" width="320" height="508"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" verticalCompressionResistancePriority="1000" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImageCell" id="GEH-c5-jHI" customClass="StreamTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" verticalCompressionResistancePriority="1000" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImageCell" id="GEH-c5-jHI" customClass="StreamTableViewCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="410"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" verticalHuggingPriority="254" verticalCompressionResistancePriority="251" tableViewCell="GEH-c5-jHI" id="Omw-SV-Eht">
@@ -201,17 +201,25 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xhn-ga-ySM" customClass="FXBlurView">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="409.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IeF-c1-o8s">
-                                                            <rect key="frame" x="20" y="10" width="280" height="389.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <view alpha="0.45000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hgd-eO-VoV">
+                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="409.5"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="4" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IeF-c1-o8s">
+                                                            <rect key="frame" x="10" y="10" width="300" height="389.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="IeF-c1-o8s" secondAttribute="trailing" constant="20" id="V0g-Oj-Wue"/>
+                                                        <constraint firstItem="hgd-eO-VoV" firstAttribute="height" secondItem="Xhn-ga-ySM" secondAttribute="height" id="6Zj-Yk-WTc"/>
+                                                        <constraint firstItem="hgd-eO-VoV" firstAttribute="leading" secondItem="Xhn-ga-ySM" secondAttribute="leading" id="QXu-MH-gXN"/>
+                                                        <constraint firstAttribute="trailing" secondItem="IeF-c1-o8s" secondAttribute="trailing" constant="10" id="V0g-Oj-Wue"/>
+                                                        <constraint firstItem="hgd-eO-VoV" firstAttribute="width" secondItem="Xhn-ga-ySM" secondAttribute="width" id="aE4-7x-Ks1"/>
                                                         <constraint firstItem="IeF-c1-o8s" firstAttribute="top" secondItem="Xhn-ga-ySM" secondAttribute="top" constant="10" id="bl0-R4-N53"/>
-                                                        <constraint firstItem="IeF-c1-o8s" firstAttribute="leading" secondItem="Xhn-ga-ySM" secondAttribute="leading" constant="20" id="xlI-ZU-FCf"/>
+                                                        <constraint firstItem="hgd-eO-VoV" firstAttribute="top" secondItem="Xhn-ga-ySM" secondAttribute="top" id="tLk-cK-Be6"/>
+                                                        <constraint firstItem="IeF-c1-o8s" firstAttribute="leading" secondItem="Xhn-ga-ySM" secondAttribute="leading" constant="10" id="xlI-ZU-FCf"/>
                                                         <constraint firstAttribute="bottom" secondItem="IeF-c1-o8s" secondAttribute="bottom" constant="10" id="yqh-Hf-Lqo"/>
                                                     </constraints>
                                                 </view>

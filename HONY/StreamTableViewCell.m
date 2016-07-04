@@ -17,8 +17,7 @@
 
 
 @synthesize cellImageView, textview;
-@synthesize unblurredImage, blurredImage, imageBlurred;
-@synthesize imageHeightConstraint, textViewHeightConstraint, blur;
+@synthesize imageHeightConstraint, textViewHeightConstraint, blur, delegate;
 
 
 - (void)awakeFromNib {
@@ -61,11 +60,11 @@
 {
     NSLog(@"show");
     
+    
     [UIView animateWithDuration:0.2 animations:^{
         blur.alpha = 1.0;
-//        blur.layer.opacity = 1.0;
+        blur.layer.opacity = 1.0;
 //        [self bringSubviewToFront:blur];
-        NSLog(@"alpha %f", blur.alpha);
         
     } completion:^(BOOL finished) {
         
@@ -78,7 +77,7 @@
     
     [UIView animateWithDuration:0.2 animations:^{
         blur.alpha = 0.0;
-//        blur.layer.opacity = 1.0;
+        blur.layer.opacity = 1.0;
         
     } completion:^(BOOL finished) {
         
@@ -90,38 +89,9 @@
 
 
 
--(void)changeTextHiddenStatus{
-    //Only show text, if the image has been downloaded already
-    if(cellImageView.image){
-        if(!unblurredImage){
-            unblurredImage = cellImageView.image;
-        }
-        if(!blurredImage){
-            blurredImage = [self blurImage:cellImageView.image];
-        }
-        if(imageBlurred){
-            cellImageView.image = unblurredImage;
-            
-//            [blur removeFromSuperview];
-            textview.hidden = YES;
-        }else{
-            cellImageView.image = blurredImage;
-//            [self addSubview:blur];
-            
-            textview.hidden = NO;
-        }
-        imageBlurred = !imageBlurred;
-    }else{
-        //Prepare a blurred image for performance reasons
-        if(!blurredImage){
-            blurredImage = [self blurImage:cellImageView.image];
-        }
-    }
-}
-
 -(void)setText:(NSString *)postText{
     textview.text = postText;
-    textview.font = [UIFont fontWithName:@"Raleway" size:17];
+    textview.font = [UIFont fontWithName:@"SFUIText-Medium" size:10];
 }
 
 
@@ -137,9 +107,9 @@
 -(void)prepareForReuse{
     cellImageView.image = nil;
     textview.text = @"";
-    textview.hidden = YES;
+    textview.hidden = NO;
 //    imageHeightConstraint.priority = 250;
-    imageHeightConstraint.constant = 100;
+//    imageHeightConstraint.constant = 100;
     [self setNeedsLayout];
     [self layoutIfNeeded];
 }

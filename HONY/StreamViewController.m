@@ -20,7 +20,7 @@
 
 @interface StreamViewController ()
 
-@property NSInteger selectedRow;
+@property NSUInteger selectedRow;
 
 @end
 
@@ -134,16 +134,23 @@
     CGFloat cellHeight = 100;
     CGFloat aspectRatio;
     
+    
     // NSString* reuseIdentifier = [NSString stringWithFormat:@"ImageCell%li", (long)indexPath.row];
     NSString* reuseIdentifier = @"ImageCell";
-    StreamTableViewCell* cell = [streamTableView dequeueReusableCellWithIdentifier:reuseIdentifier];
-    [cell prepareForReuse];
-    if(!cell){
-        cell = [[StreamTableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:reuseIdentifier];
+    StreamTableViewCell *cell = [streamTableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
+//    NSLog(@"cell %ld", (long)indexPath.row);
+    
+    if (indexPath.row == selectedRow) {
+        cell.blur.alpha = 1;
     }
-    cell.blurredImage = nil;
-    cell.unblurredImage = nil;
-    cell.imageBlurred = NO;
+    else {
+        cell.blur.alpha = 0;
+    }
+    
+//    [cell prepareForReuse];
+//    if(!cell){
+//        cell = [[StreamTableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:reuseIdentifier];
+//    }
     
     NSMutableArray* postArray = [HPPostHandler sharedPostHandler].posts;
     NSInteger postNumberInTableView = indexPath.row;
@@ -187,7 +194,7 @@
                                             }]*/
                                        }
                                        failure:NULL];
-    [cell setText:post.caption];
+    cell.textview.text = post.caption;
     
     CGFloat textViewHeight = [cell.textview sizeThatFits:CGSizeMake(cell.textview.bounds.size.width, CGFLOAT_MAX)].height;
     CGFloat textViewTopMargin = 10;
@@ -207,11 +214,16 @@
     [cell layoutIfNeeded];
     [streamTableView layoutIfNeeded];
     [streamTableView setNeedsLayout];
+    
     return cell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [[HPPostHandler sharedPostHandler].posts count];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -232,16 +244,28 @@
     return cellHeight;
 }
 
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    StreamTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ImageCell" forIndexPath:indexPath];
+//    [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
-    if(cell.blur.alpha == 0) {
-        [cell showBlur];
+    NSString* reuseIdentifier = @"ImageCell";
+    StreamTableViewCell *cell = [streamTableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
+    
+//    NSLog(@"index %ld", (long)indexPath.row);
+    
+    if (selectedRow == indexPath.row) {
+//        [cell hideBlur];
+        selectedRow = -5;
     }
     else {
-        [cell hideBlur];
+        selectedRow = indexPath.row;
     }
+    
+    
+    
+    [streamTableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:(UITableViewRowAnimationAutomatic)];
 }
 
 
