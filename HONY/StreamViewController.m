@@ -253,14 +253,24 @@
     NSString* reuseIdentifier = @"ImageCell";
     StreamTableViewCell *cell = [streamTableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
     
-//    NSLog(@"index %ld", (long)indexPath.row);
+    NSLog(@"index %ld", selectedRow);
     
     if (selectedRow == indexPath.row) {
 //        [cell hideBlur];
         selectedRow = -5;
     }
     else {
-        selectedRow = indexPath.row;
+        
+        if (selectedRow != -5) {
+            
+            NSUInteger row = selectedRow;
+            selectedRow = indexPath.row;
+            
+            [streamTableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:(UITableViewRowAnimationAutomatic)];
+        }
+        else {
+            selectedRow = indexPath.row;
+        }
     }
     
     
