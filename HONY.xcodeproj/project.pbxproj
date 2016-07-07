@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18127E4A1D2D5F7D0003E867 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 18127E491D2D5F7D0003E867 /* Podfile */; };
+		18127E661D2E63020003E867 /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18127E651D2E63020003E867 /* Space.swift */; };
 		181A77331B28BDA9000E7002 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 181A77321B28BDA9000E7002 /* FXBlurView.m */; };
 		1835925E193770CD007F6A9B /* coverphoto1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1835925D193770CD007F6A9B /* coverphoto1.png */; };
 		184A2AB71934B580006465C9 /* HONYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184A2AB61934B580006465C9 /* HONYViewController.m */; };
+		18873D2F1D2D5302006233D3 /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 18873D2E1D2D5302006233D3 /* Network.m */; };
+		18A7FA201D2E73180091B5D2 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A7FA1F1D2E73180091B5D2 /* OpenSans-Regular.ttf */; };
 		18A99CF91934E790008977C1 /* honytitle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18A99CF81934E790008977C1 /* honytitle.jpg */; };
 		18B1FF56193627E70087DE8B /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18B1FF55193627D40087DE8B /* Raleway-Regular.ttf */; };
 		18D73DA119378B55005EAE68 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D73D9E19378B55005EAE68 /* PageViewController.m */; };
@@ -26,7 +30,6 @@
 		1F9BAFAA1B1B0F4B007DD42E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9BAFA91B1B0F4B007DD42E /* SWRevealViewController.m */; };
 		1F9BAFAD1B1B0F7F007DD42E /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9BAFAC1B1B0F7F007DD42E /* SidebarViewController.m */; };
 		1FAE0F7F1B289DCC0092F057 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FAE0F7E1B289DCC0092F057 /* SystemConfiguration.framework */; };
-		1FAE0F821B289FC20092F057 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAE0F811B289FC20092F057 /* Reachability.m */; };
 		8361AD08194DE335002A37C7 /* ImageScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8361AD07194DE335002A37C7 /* ImageScrollViewController.m */; };
 		8376DA1519333FC700F2FBBE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8376DA1419333FC700F2FBBE /* Foundation.framework */; };
 		8376DA1719333FC700F2FBBE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8376DA1619333FC700F2FBBE /* CoreGraphics.framework */; };
@@ -51,6 +54,7 @@
 		83B82A381933778D00B47F50 /* HOFullscreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B82A371933778D00B47F50 /* HOFullscreenViewController.m */; };
 		83DB03B3195D789000DC303A /* HOFeedPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DB03B2195D789000DC303A /* HOFeedPageViewController.m */; };
 		946102FC151143E59B1DD3D3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 481DC6893C1E4743B44E3996 /* libPods.a */; };
+		C4FBD80B68808CC5ABCF445F /* Pods_HONY.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F0EBE10B160F7CC2E1CC29 /* Pods_HONY.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,11 +68,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18127E491D2D5F7D0003E867 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		18127E621D2E626D0003E867 /* HONY-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HONY-Bridging-Header.h"; sourceTree = "<group>"; };
+		18127E651D2E63020003E867 /* Space.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
 		181A77311B28BDA9000E7002 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
 		181A77321B28BDA9000E7002 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
 		1835925D193770CD007F6A9B /* coverphoto1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coverphoto1.png; sourceTree = "<group>"; };
 		184A2AB51934B580006465C9 /* HONYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HONYViewController.h; sourceTree = "<group>"; };
 		184A2AB61934B580006465C9 /* HONYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HONYViewController.m; sourceTree = "<group>"; };
+		18873D2D1D2D5302006233D3 /* Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
+		18873D2E1D2D5302006233D3 /* Network.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Network.m; sourceTree = "<group>"; };
+		18A7FA1F1D2E73180091B5D2 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		18A99CF81934E790008977C1 /* honytitle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = honytitle.jpg; sourceTree = "<group>"; };
 		18B1FF55193627D40087DE8B /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
 		18D73D9D19378B55005EAE68 /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
@@ -94,9 +104,9 @@
 		1F9BAFAB1B1B0F7F007DD42E /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarViewController.h; sourceTree = "<group>"; };
 		1F9BAFAC1B1B0F7F007DD42E /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarViewController.m; sourceTree = "<group>"; };
 		1FAE0F7E1B289DCC0092F057 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		1FAE0F801B289FC20092F057 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		1FAE0F811B289FC20092F057 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		25F0EBE10B160F7CC2E1CC29 /* Pods_HONY.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HONY.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		481DC6893C1E4743B44E3996 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		65DF53D80592853669FCF6E6 /* Pods-HONY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HONY.release.xcconfig"; path = "Pods/Target Support Files/Pods-HONY/Pods-HONY.release.xcconfig"; sourceTree = "<group>"; };
 		8361AD06194DE335002A37C7 /* ImageScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScrollViewController.h; sourceTree = "<group>"; };
 		8361AD07194DE335002A37C7 /* ImageScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageScrollViewController.m; sourceTree = "<group>"; };
 		8376DA1119333FC700F2FBBE /* HONY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HONY.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,7 +142,7 @@
 		83B82A371933778D00B47F50 /* HOFullscreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOFullscreenViewController.m; sourceTree = "<group>"; };
 		83DB03B1195D789000DC303A /* HOFeedPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOFeedPageViewController.h; sourceTree = "<group>"; };
 		83DB03B2195D789000DC303A /* HOFeedPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOFeedPageViewController.m; sourceTree = "<group>"; };
-		E11A31A25BF348A4B0D684E0 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		8554B9EC114271DCE7A2EE3D /* Pods-HONY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HONY.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HONY/Pods-HONY.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +155,7 @@
 				8376DA1919333FC700F2FBBE /* UIKit.framework in Frameworks */,
 				8376DA1519333FC700F2FBBE /* Foundation.framework in Frameworks */,
 				946102FC151143E59B1DD3D3 /* libPods.a in Frameworks */,
+				C4FBD80B68808CC5ABCF445F /* Pods_HONY.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,11 +184,13 @@
 		8376DA0819333FC700F2FBBE = {
 			isa = PBXGroup;
 			children = (
+				18127E491D2D5F7D0003E867 /* Podfile */,
 				8376DA1A19333FC700F2FBBE /* HONY */,
 				8376DA3C19333FC700F2FBBE /* HONYTests */,
 				8376DA1319333FC700F2FBBE /* Frameworks */,
 				8376DA1219333FC700F2FBBE /* Products */,
-				E11A31A25BF348A4B0D684E0 /* Pods.xcconfig */,
+				A8D30488EDFBACEFD8F5041C /* Pods */,
+				18127E621D2E626D0003E867 /* HONY-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -199,6 +212,7 @@
 				8376DA1819333FC700F2FBBE /* UIKit.framework */,
 				8376DA3619333FC700F2FBBE /* XCTest.framework */,
 				481DC6893C1E4743B44E3996 /* libPods.a */,
+				25F0EBE10B160F7CC2E1CC29 /* Pods_HONY.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -232,6 +246,7 @@
 				1F4A89B41B1E36200066DB67 /* StreamTableViewCell.m */,
 				1F4A89B01B1E164D0066DB67 /* StreamViewController.h */,
 				1F4A89B11B1E164D0066DB67 /* StreamViewController.m */,
+				18127E651D2E63020003E867 /* Space.swift */,
 				8376DA511933430600F2FBBE /* HOFeedViewController.h */,
 				8376DA521933430600F2FBBE /* HOFeedViewController.m */,
 				83DB03B1195D789000DC303A /* HOFeedPageViewController.h */,
@@ -250,13 +265,14 @@
 				18DADD90193781F000C3EE8B /* CustomCell.xib */,
 				18DADD921937821600C3EE8B /* CustomCell.h */,
 				18DADD931937821600C3EE8B /* CustomCell.m */,
-				1FAE0F801B289FC20092F057 /* Reachability.h */,
-				1FAE0F811B289FC20092F057 /* Reachability.m */,
+				18873D2D1D2D5302006233D3 /* Network.h */,
+				18873D2E1D2D5302006233D3 /* Network.m */,
 				18A99CF81934E790008977C1 /* honytitle.jpg */,
 				1835925D193770CD007F6A9B /* coverphoto1.png */,
 				8376DA2F19333FC700F2FBBE /* Images.xcassets */,
 				8376DA571933535D00F2FBBE /* BebasNeue.ttf */,
 				18B1FF55193627D40087DE8B /* Raleway-Regular.ttf */,
+				18A7FA1F1D2E73180091B5D2 /* OpenSans-Regular.ttf */,
 				181A77301B28BDA9000E7002 /* FXBlurView */,
 				8376DA1B19333FC700F2FBBE /* Supporting Files */,
 			);
@@ -292,6 +308,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A8D30488EDFBACEFD8F5041C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8554B9EC114271DCE7A2EE3D /* Pods-HONY.debug.xcconfig */,
+				65DF53D80592853669FCF6E6 /* Pods-HONY.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -299,11 +324,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8376DA4619333FC700F2FBBE /* Build configuration list for PBXNativeTarget "HONY" */;
 			buildPhases = (
-				69122AD1AA4F486E9720FF9E /* Check Pods Manifest.lock */,
+				69122AD1AA4F486E9720FF9E /* [CP] Check Pods Manifest.lock */,
 				8376DA0D19333FC700F2FBBE /* Sources */,
 				8376DA0E19333FC700F2FBBE /* Frameworks */,
 				8376DA0F19333FC700F2FBBE /* Resources */,
-				68F8A8474C154B0E8A87E3D9 /* Copy Pods Resources */,
+				68F8A8474C154B0E8A87E3D9 /* [CP] Copy Pods Resources */,
+				08C38AE95412BA8A022C3AD4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -339,8 +365,9 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = HO;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = "Magnus Langanke";
+				ORGANIZATIONNAME = wunderfactory;
 				TargetAttributes = {
 					8376DA1019333FC700F2FBBE = {
 						DevelopmentTeam = HKH74J3YRQ;
@@ -383,6 +410,8 @@
 				8376DA3019333FC700F2FBBE /* Images.xcassets in Resources */,
 				1835925E193770CD007F6A9B /* coverphoto1.png in Resources */,
 				8376DA2819333FC700F2FBBE /* Main_iPhone.storyboard in Resources */,
+				18127E4A1D2D5F7D0003E867 /* Podfile in Resources */,
+				18A7FA201D2E73180091B5D2 /* OpenSans-Regular.ttf in Resources */,
 				18A99CF91934E790008977C1 /* honytitle.jpg in Resources */,
 				18D73DA819379467005EAE68 /* Bild3.png in Resources */,
 				8376DA1F19333FC700F2FBBE /* InfoPlist.strings in Resources */,
@@ -400,29 +429,44 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		68F8A8474C154B0E8A87E3D9 /* Copy Pods Resources */ = {
+		08C38AE95412BA8A022C3AD4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HONY/Pods-HONY-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		69122AD1AA4F486E9720FF9E /* Check Pods Manifest.lock */ = {
+		68F8A8474C154B0E8A87E3D9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HONY/Pods-HONY-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		69122AD1AA4F486E9720FF9E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,11 +492,12 @@
 				83B461951943328D00EBCBDF /* HPTumblrPost.m in Sources */,
 				184A2AB71934B580006465C9 /* HONYViewController.m in Sources */,
 				8376DA56193346B500F2FBBE /* DPWebConnector.m in Sources */,
-				1FAE0F821B289FC20092F057 /* Reachability.m in Sources */,
 				1F9BAFAD1B1B0F7F007DD42E /* SidebarViewController.m in Sources */,
 				18D73DA219378B55005EAE68 /* PageContentViewController.m in Sources */,
 				18DADD8F193779A400C3EE8B /* NewsViewController.m in Sources */,
+				18873D2F1D2D5302006233D3 /* Network.m in Sources */,
 				1F9BAFAA1B1B0F4B007DD42E /* SWRevealViewController.m in Sources */,
+				18127E661D2E63020003E867 /* Space.swift in Sources */,
 				83B461941943328D00EBCBDF /* HPPostHandler.m in Sources */,
 				83DB03B3195D789000DC303A /* HOFeedPageViewController.m in Sources */,
 				1F4A89B21B1E164D0066DB67 /* StreamViewController.m in Sources */,
@@ -534,6 +579,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -573,6 +619,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -590,12 +637,14 @@
 		};
 		8376DA4719333FC700F2FBBE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E11A31A25BF348A4B0D684E0 /* Pods.xcconfig */;
+			baseConfigurationReference = 8554B9EC114271DCE7A2EE3D /* Pods-HONY.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: ideacubator UG (haftungsbeschraenkt) (HKH74J3YRQ)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Patrick Haede (2TVKFW4XN6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -603,9 +652,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HONY/HONY-Prefix.pch";
 				INFOPLIST_FILE = "HONY/HONY-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a1622d5f-8542-4cb3-b494-002dbf3d0c9f";
+				PROVISIONING_PROFILE = "2560fa51-fce9-45a4-8a86-8c4a107f0512";
+				SWIFT_OBJC_BRIDGING_HEADER = "HONY-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -613,13 +665,15 @@
 		};
 		8376DA4819333FC700F2FBBE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E11A31A25BF348A4B0D684E0 /* Pods.xcconfig */;
+			baseConfigurationReference = 65DF53D80592853669FCF6E6 /* Pods-HONY.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: ideacubator UG (haftungsbeschraenkt) (HKH74J3YRQ)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Patrick Haede (2TVKFW4XN6)";
 				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -627,9 +681,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HONY/HONY-Prefix.pch";
 				INFOPLIST_FILE = "HONY/HONY-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a1622d5f-8542-4cb3-b494-002dbf3d0c9f";
+				PROVISIONING_PROFILE = "2560fa51-fce9-45a4-8a86-8c4a107f0512";
+				SWIFT_OBJC_BRIDGING_HEADER = "HONY-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

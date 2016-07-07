@@ -10,10 +10,13 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import "SWRevealViewController.h"
+#import "UIScrollView+APParallaxHeader.h"
 
 #define distanceButtons 35.0f
 
 @interface HONYViewController ()
+
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 
@@ -36,7 +39,6 @@
     
     
     UIFont *bebasNeue = [UIFont fontWithName:@"BebasNeue" size:32.0];
-    UIFont *raleway = [UIFont fontWithName:@"Raleway-Regular" size:17.0];
     
    // UIColor *honyBlue = [UIColor colorWithRed:59.0/255.0 green:88.0/255.0 blue:152.0/255.0 alpha:1.0];
     
@@ -53,13 +55,18 @@
     //Add Menu Item to Top Bar
     SWRevealViewController* revealViewController = self.revealViewController;
     if(revealViewController){
-        UIButton* menuItem = [[UIButton alloc] initWithFrame:CGRectMake(5, topBar.bounds.size.height - 5- 25, 20, 20)];
+        UIButton* menuItem = [[UIButton alloc] initWithFrame:CGRectMake(5, topBar.bounds.size.height - 5- 35, 40, 40)];
         [menuItem addTarget:self.revealViewController action:@selector(revealToggle:) forControlEvents: UIControlEventTouchDown];
         //[menuItem setTitle:@"Menu" forState:UIControlStateNormal];
         [menuItem setImage:[UIImage imageNamed:@"MenuIcon"] forState:UIControlStateNormal];
         [topBar addSubview:menuItem];
     }
     
+    self.view.backgroundColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1.00];
+
+    
+    [_scrollView addParallaxWithImage:[UIImage imageNamed:@"honytitle.jpg"] andHeight:[UIImage imageNamed:@"honytitle.jpg"].size.height];
+
     
     
     // Text View & Buttons
@@ -67,7 +74,9 @@
     infoText.editable = NO;
     infoText.userInteractionEnabled = YES;
     infoText.scrollEnabled = YES;
-    infoText.font = raleway;
+    infoText.font = [UIFont fontWithName:@"Open Sans" size:13];
+    infoText.textColor = [UIColor colorWithRed:0.15 green:0.15 blue:0.15 alpha:1.00];
+    infoText.backgroundColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1.00];
     infoText.text = @"Brandon Stanton started HONY in the summer of 2010 with the idea of building an exhaustive catalogue of New York City’s inhabitants. He set out to photograph and map more than 10.000 people. Collecting quotes and short stories from the persons he met on the streets of New York he has created one of the most colourful and vibrant blogs on the web. His book has become a #1 NYT bestseller and HONY now has millions of followers around the globe.";
     
     //Bottom Bar Setup

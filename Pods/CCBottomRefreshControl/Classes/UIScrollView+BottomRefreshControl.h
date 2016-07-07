@@ -1,6 +1,6 @@
 //
 //  UITableView+BottomRefreshControl.h
-//  Showroom
+//  BottomRefreshControl
 //
 //  Created by Nikolay Vlasov on 14.01.14.
 //  Copyright (c) 2014 Nikolay Vlasov. All rights reserved.
@@ -10,6 +10,13 @@
 
 @interface UIScrollView (BottomRefreshControl)
 
-@property (nonatomic, strong) UIRefreshControl *bottomRefreshControl;
+@property (nonatomic) UIRefreshControl *bottomRefreshControl;
+
+@end
+
+
+@interface UIRefreshControl (BottomRefreshControl)
+
+@property (nonatomic) CGFloat triggerVerticalOffset;
 
 @end

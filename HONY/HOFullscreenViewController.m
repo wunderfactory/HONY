@@ -75,11 +75,12 @@
     
 
     UIButton* closebutton = [[UIButton alloc] initWithFrame:CGRectMake(rect.size.width-22-5, 5, 22, 22)];
-    [closebutton setBackgroundImage:[UIImage imageNamed:@"Close"] forState:UIControlStateNormal];
+    [closebutton setImage:[[UIImage imageNamed:@"Close"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
     [closebutton addTarget:self action:@selector(closeFullscreen:) forControlEvents:UIControlEventTouchUpInside];
+    closebutton.tintColor = [UIColor whiteColor];
     [self.view addSubview:closebutton];
     
-    shareButton = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 23, 18)];
+    shareButton = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 28, 40)];
     [shareButton setBackgroundImage:[UIImage imageNamed:@"share"] forState:UIControlStateNormal];
     [shareButton addTarget:self action:@selector(sharePost) forControlEvents:UIControlEventTouchUpInside];
     shareButton.hidden = YES;

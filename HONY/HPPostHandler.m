@@ -187,7 +187,7 @@ static HPPostHandler* handler = NULL;
 
 //From Stack Overflow:
 /*
- Connectivity testing code pulled from Apple's Reachability Example: http://developer.apple.com/library/ios/#samplecode/Reachability
+ Connectivity testing code pulled from Apple's Network Example: http://developer.apple.com/library/ios/#samplecode/Network
  */
 -(BOOL)hasConnectivity {
     struct sockaddr_in zeroAddress;
@@ -238,6 +238,5 @@ static HPPostHandler* handler = NULL;
     
     return NO;
 }
-
 
 @end

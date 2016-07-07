@@ -17,17 +17,22 @@
 #import "HOFeedPageViewController.h"
 #import "SWRevealViewController.h"
 #import "StreamTableViewCell.h"
+#import "Network.h"
+#import "HONY-Swift.h"
+
 
 @interface StreamViewController ()
 
 @property NSUInteger selectedRow;
+
+@property (strong, nonatomic) UIButton* listButton;
 
 @end
 
 @implementation StreamViewController
 @synthesize selectedIndex, topRefreshControl, totalPosts, shuffelPost;
 @synthesize streamTableView, topBar, shuffelButton;
-@synthesize shuffel, streamLoadingActivityIndicator, streamCollectionView, selectedRow;
+@synthesize shuffel, streamLoadingActivityIndicator, streamCollectionView, selectedRow, listButton;
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -35,13 +40,9 @@
         [[NSUserDefaults standardUserDefaults] setValue:@"1" forKey:@"Avalue"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         
-        [self performSegueWithIdentifier:@"feedToWalkthrough" sender:nil];
     }
     
-    if(![[HPPostHandler sharedPostHandler] hasConnectivity]){
-        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Error connecting to internet." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-        [alertView show];
-    }
+    
     [streamTableView reloadData];
     [streamTableView setNeedsLayout];
     [streamTableView layoutIfNeeded];
@@ -58,25 +59,46 @@
     streamCollectionView.dataSource = self;
     streamCollectionView.delegate = self;
     
-    NSLog(@"%i", [[NSUserDefaults standardUserDefaults] boolForKey:@"listInFeed"]);
+    
+    listButton = [[UIButton alloc] initWithFrame:CGRectMake(topBar.bounds.size.width - 8 - 30 - 40, topBar.bounds.size.height - 5- 35, 40, 40)];
+
+    
+    
+//    NSLog(@"%i", [[NSUserDefaults standardUserDefaults] boolForKey:@"listInFeed"]);
     if([[NSUserDefaults standardUserDefaults] boolForKey:@"listInFeed"] == YES) {
         streamCollectionView.hidden = true;
         [streamTableView reloadData];
+        [listButton setImage:[[UIImage imageNamed:@"Collection"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+
     }
     else {
         streamTableView.hidden = true;
         [streamCollectionView reloadData];
+        [listButton setImage:[[UIImage imageNamed:@"List"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
     }
     
     //streamTableView.rowHeight = UITableViewAutomaticDimension;
     //streamTableView.estimatedRowHeight = 110;
     
     [self setNeedsStatusBarAppearanceUpdate];
+    
+    
+    if (![[HPPostHandler new] hasConnectivity]) {
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Error connecting to internet." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alertView show];
+    }
+    
+    
+    
+    
+    
+    
     [[HPPostHandler sharedPostHandler] startSession];
+    
     topRefreshControl = [[UIRefreshControl alloc] init];
     [topRefreshControl addTarget:self action:@selector(loadNewPosts) forControlEvents:UIControlEventValueChanged];
     [streamTableView addSubview:topRefreshControl];
-    streamTableView.alwaysBounceVertical = YES;
+//    streamTableView.alwaysBounceVertical = YES;
     
     streamTableView.bottomRefreshControl = [UIRefreshControl new];
     [streamTableView.bottomRefreshControl addTarget:self action:@selector(loadOldPosts) forControlEvents:UIControlEventValueChanged];
@@ -97,12 +119,14 @@
     if(revealViewController){
         revealViewController.rearViewRevealWidth = 150;
         [self.view addGestureRecognizer:[revealViewController panGestureRecognizer]];
-        UIButton* menuItem = [[UIButton alloc] initWithFrame:CGRectMake(5, topBar.bounds.size.height - 5- 25, 20, 20)];
+        UIButton* menuItem = [[UIButton alloc] initWithFrame:CGRectMake(5, topBar.bounds.size.height - 5- 35, 40, 40)];
         [menuItem addTarget:self.revealViewController action:@selector(revealToggle:) forControlEvents: UIControlEventTouchDown];
         //[menuItem setTitle:@"Menu" forState:UIControlStateNormal];
         [menuItem setImage:[UIImage imageNamed:@"MenuIcon"] forState:UIControlStateNormal];
         [topBar addSubview:menuItem];
     }
+    
+    
     
     
     
@@ -114,6 +138,11 @@
 //    [shuffelButton setBackgroundImage:[UIImage imageNamed:@"NewShuffle"] forState:UIControlStateNormal];
     [topBar addSubview:shuffelButton];
     
+    
+    [listButton addTarget:self action:@selector(switchLayout) forControlEvents: UIControlEventTouchUpInside];
+    listButton.tintColor = [UIColor whiteColor];
+    //[menuItem setTitle:@"Menu" forState:UIControlStateNormal];
+    [topBar addSubview:listButton];
     
 //    [streamCollectionView layoutIfNeeded];
 }
@@ -226,7 +255,7 @@
     return 1;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     CGFloat cellHeight = 0;
     NSMutableArray* postArray = [HPPostHandler sharedPostHandler].posts;
     NSInteger postNumberInTableView = indexPath.row;
@@ -248,12 +277,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    
-    NSString* reuseIdentifier = @"ImageCell";
-    StreamTableViewCell *cell = [streamTableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
-    
-    NSLog(@"index %ld", selectedRow);
     
     if (selectedRow == indexPath.row) {
 //        [cell hideBlur];
@@ -280,7 +303,7 @@
 
 
 
-- (IBAction)switchLayout:(id)sender {
+- (void)switchLayout {
     
     if([[NSUserDefaults standardUserDefaults] boolForKey:@"listInFeed"] == YES) {
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"listInFeed"];
@@ -296,11 +319,13 @@
         streamCollectionView.hidden = true;
         streamTableView.hidden = false;
         [streamTableView reloadData];
+        [listButton setImage:[[UIImage imageNamed:@"Collection"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
     }
     else {
         streamTableView.hidden = true;
         streamCollectionView.hidden = false;
         [streamCollectionView reloadData];
+        [listButton setImage:[[UIImage imageNamed:@"List"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
     }
 }
 
