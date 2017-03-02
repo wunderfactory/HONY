@@ -1,6 +1,6 @@
 # HONY
 
-[logo]: https://raw.githubusercontent.com/wunderfactory/HONY/master/HONY/coverphoto.png
+![HONY Cover](https://raw.githubusercontent.com/wunderfactory/HONY/master/HONY/coverphoto.png)
 
 
 This is the repository for the HONY iOS project
