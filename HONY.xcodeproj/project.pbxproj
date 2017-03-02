@@ -13,6 +13,7 @@
 		1835925E193770CD007F6A9B /* coverphoto1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1835925D193770CD007F6A9B /* coverphoto1.png */; };
 		184A2AB71934B580006465C9 /* HONYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184A2AB61934B580006465C9 /* HONYViewController.m */; };
 		18873D2F1D2D5302006233D3 /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 18873D2E1D2D5302006233D3 /* Network.m */; };
+		189640791E68486A00A09D2F /* coverphoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 189640781E68486A00A09D2F /* coverphoto.png */; };
 		18A7FA201D2E73180091B5D2 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A7FA1F1D2E73180091B5D2 /* OpenSans-Regular.ttf */; };
 		18A99CF91934E790008977C1 /* honytitle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18A99CF81934E790008977C1 /* honytitle.jpg */; };
 		18B1FF56193627E70087DE8B /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18B1FF55193627D40087DE8B /* Raleway-Regular.ttf */; };
@@ -78,6 +79,7 @@
 		184A2AB61934B580006465C9 /* HONYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HONYViewController.m; sourceTree = "<group>"; };
 		18873D2D1D2D5302006233D3 /* Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
 		18873D2E1D2D5302006233D3 /* Network.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Network.m; sourceTree = "<group>"; };
+		189640781E68486A00A09D2F /* coverphoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coverphoto.png; sourceTree = "<group>"; };
 		18A7FA1F1D2E73180091B5D2 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		18A99CF81934E790008977C1 /* honytitle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = honytitle.jpg; sourceTree = "<group>"; };
 		18B1FF55193627D40087DE8B /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				18873D2E1D2D5302006233D3 /* Network.m */,
 				18A99CF81934E790008977C1 /* honytitle.jpg */,
 				1835925D193770CD007F6A9B /* coverphoto1.png */,
+				189640781E68486A00A09D2F /* coverphoto.png */,
 				8376DA2F19333FC700F2FBBE /* Images.xcassets */,
 				8376DA571933535D00F2FBBE /* BebasNeue.ttf */,
 				18B1FF55193627D40087DE8B /* Raleway-Regular.ttf */,
@@ -402,6 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18DADD91193781F000C3EE8B /* CustomCell.xib in Resources */,
+				189640791E68486A00A09D2F /* coverphoto.png in Resources */,
 				18D73DA619378C80005EAE68 /* Bild2.png in Resources */,
 				18B1FF56193627E70087DE8B /* Raleway-Regular.ttf in Resources */,
 				8376DA581933543700F2FBBE /* BebasNeue.ttf in Resources */,
